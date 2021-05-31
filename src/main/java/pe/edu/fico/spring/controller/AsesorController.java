@@ -16,54 +16,54 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import pe.edu.fico.spring.model.EntidadBancaria;
-import pe.edu.fico.spring.service.IEntidadBancariaService;
+import pe.edu.fico.spring.model.Asesor;
+import pe.edu.fico.spring.service.IAsesorService;
 
 @Controller
-@RequestMapping("/entidad")
-public class EntidadBancariaController {
+@RequestMapping("/asesor")
+public class AsesorController {
 
 	@Autowired
-	private IEntidadBancariaService eService;
+	private IAsesorService aService;
 
 	@RequestMapping("/")
-	public String irEntidad(Map<String, Object> model) {
-		model.put("listaEntidades", eService.listar());
-		return "listEntidad";
+	public String irAsesor(Map<String, Object> model) {
+		model.put("listaAsesores", aService.listar());
+		return "listAsesor";
 	}
 
 	@RequestMapping("/irRegistrar")
 	public String irRegistrar(Model model) {
-		model.addAttribute("entidad", new EntidadBancaria());
-		return "entidad";
+		model.addAttribute("asesor", new Asesor());
+		return "asesor";
 	}
 
 	@RequestMapping("/registrar")
-	public String registrar(@ModelAttribute EntidadBancaria entidad, BindingResult binRes, Model model)
+	public String registrar(@ModelAttribute Asesor asesor, BindingResult binRes, Model model)
 			throws ParseException {
 		if (binRes.hasErrors()) {
 			model.addAttribute("mensaje", "Ocurrio un error");
-			return "entidad";
+			return "asesor";
 		} else {
-			boolean flag = eService.insertar(entidad);
+			boolean flag = aService.insertar(asesor);
 			if (flag) {
-				return "redirect:/entidad/listar";
+				return "redirect:/asesor/listar";
 			} else {
 				model.addAttribute("mensaje", "Ocurrio un error");
-				return "redirect:/entidad/irRegistrar";
+				return "redirect:/asesor/irRegistrar";
 			}
 		}
 	}
 
 	@RequestMapping("/modificar/{id}")
 	public String modificar(@PathVariable int id, Model model, RedirectAttributes objRedir) throws ParseException {
-		Optional<EntidadBancaria> objEntidad = eService.listarId(id);
-		if (objEntidad == null) {
+		Optional<Asesor> objAsesor = aService.listarId(id);
+		if (objAsesor == null) {
 			objRedir.addFlashAttribute("mensaje", "Ocurrio un error");
-			return "redirect:/entidad/listar";
+			return "redirect:/asesor/listar";
 		} else {
-			model.addAttribute("entidad", objEntidad);
-			return "entidad";
+			model.addAttribute("asesor", objAsesor);
+			return "asesor";
 		}
 	}
 
@@ -71,44 +71,44 @@ public class EntidadBancariaController {
 	public String eliminar(Map<String, Object> model, @RequestParam(value = "id") Integer id) {
 		try {
 			if (id != null && id > 0) {
-				eService.eliminar(id);
-				model.put("listaEntidades", eService.listar());
+				aService.eliminar(id);
+				model.put("listaAsesores", aService.listar());
 			}
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 			model.put("mensaje", "Sucedio un error");
-			model.put("listaEntidades", eService.listar());
+			model.put("listaAsesores", aService.listar());
 		}
-		return "listEntidad";
+		return "listAsesor";
 	}
 
 	@RequestMapping("/listar")
 	public String listar(Map<String, Object> model) {
-		model.put("listaEntidades", eService.listar());
-		return "listEntidad";
+		model.put("listaAsesores", aService.listar());
+		return "listAsesor";
 	}
 
 	@RequestMapping("/listarId")
-	public String listar(Map<String, Object> model, @ModelAttribute EntidadBancaria entidad) throws ParseException {
-		eService.listarId(entidad.getCEntidad());
-		return "listEntidad";
+	public String listar(Map<String, Object> model, @ModelAttribute Asesor asesor) throws ParseException {
+		aService.listarId(asesor.getCAsesor());
+		return "listAsesor";
 	}
 	
 	@RequestMapping("/find")
-	public String findByNEntidad(Map<String, Object> model, @ModelAttribute EntidadBancaria entidad) throws ParseException {
-		List<EntidadBancaria> listaEntidad;
-		entidad.setNEntidad(entidad.getNEntidad());
-		listaEntidad = eService.findByNEntidad(entidad.getNEntidad());
+	public String findByNnombre(Map<String, Object> model, @ModelAttribute Asesor asesor) throws ParseException {
+		List<Asesor> listaAsesor;
+		asesor.setNnombre(asesor.getNnombre());
+		listaAsesor = aService.findByNnombre(asesor.getNnombre());
 
-		if (listaEntidad.isEmpty()) {
+		if (listaAsesor.isEmpty()) {
 			model.put("mensaje", "No se encontró");
 		}
-		model.put("listaEntidades", listaEntidad );
-		return "listEntidad";
+		model.put("listaAsesores", listaAsesor );
+		return "listAsesor";
 	}
 	
-	@ModelAttribute("entidad")
-	public EntidadBancaria createModel() {
-	    return new EntidadBancaria();
+	@ModelAttribute("asesor")
+	public Asesor createModel() {
+	    return new Asesor();
 	}
 }

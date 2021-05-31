@@ -27,7 +27,7 @@ public class EspecialidadController {
 
 	@RequestMapping("/")
 	public String irEspecialidad(Map<String, Object> model) {
-		model.put("listaEspecialidad", eService.listar());
+		model.put("listaEspecialidades", eService.listar());
 		return "listEspecialidad";
 	}
 
@@ -70,19 +70,19 @@ public class EspecialidadController {
 		try {
 			if (id != null && id > 0) {
 				eService.eliminar(id);
-				model.put("listaEspecialidad", eService.listar());
+				model.put("listaEspecialidades", eService.listar());
 			}
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 			model.put("mensaje", "Sucedio un error");
-			model.put("listaEspecialidad", eService.listar());
+			model.put("listaEspecialidades", eService.listar());
 		}
 		return "listEspecialidad";
 	}
 
 	@RequestMapping("/listar")
 	public String listar(Map<String, Object> model) {
-		model.put("listaEspecialidad", eService.listar());
+		model.put("listaEspecialidades", eService.listar());
 		return "listEspecialidad";
 	}
 
@@ -101,7 +101,7 @@ public class EspecialidadController {
 		if (listaEspecialidad.isEmpty()) {
 			model.put("mensaje", "No se encontró");
 		}
-		model.put("listaEspecialidad", listaEspecialidad );
+		model.put("listaEspecialidades", listaEspecialidad );
 		return "listEspecialidad";
 	}
 	

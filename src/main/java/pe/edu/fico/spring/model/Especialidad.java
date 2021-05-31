@@ -20,7 +20,7 @@ public class Especialidad {
 	@Column(name="NEspecialidad", nullable=false, length=30)
 	private String NEspecialidad;
 	
-	@Column(name="TDescripcion", nullable=false, length=30)
+	@Column(name="TDescripcion", nullable=false, length=50)
 	private String TDescripcion;
 
 	
