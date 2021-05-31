@@ -1,5 +1,8 @@
 package pe.edu.fico.spring.model;
 
+import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,91 +11,128 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
-@Table(name="asesor")
-public class Cliente {
+@Table(name="cliente")
+public class Cliente implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int CAsesor;
+	private int CCliente;
 	
+	@Column(name="NDNI", nullable=false, length=8)
+	private int NDNI;
+		
+	@Column(name="NNombre", nullable=false, length=30)
+	private String NNombre;
 	
-	@Column(name="Nnombre", nullable=false, length=30)
-	private String Nnombre;
+	@Column(name="NApellido", nullable=false, length=30)
+	private String NApellido;
 	
-	@Column(name="Napellido", nullable=false, length=30)
-	private String Napellido;
+	@Column(name="TCorreo", nullable=false, length=30)
+	private String TCorreo;
 	
-	@Column(name="Ndni", nullable=false, length=8)
-	private int Ndni;
+	@Temporal(TemporalType.DATE)
+	@Column(name="FNacimiento", nullable=false, length=50)
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date FNacimiento;
 	
-	@Column(name="Tcorreo", nullable=false, length=30)
-	private String Tcorreo;
-	
-	@Column(name="Tcontraseña", nullable=false, length=30)
-	private String Tcontraseña;
+	@Column(name="TContraseña", nullable=false, length=30)
+	private String TContraseña;
 	
 	@ManyToOne
-	@JoinColumn(name = "CEspecialidad", nullable = false)
-	private Especialidad especialidad;
+	@JoinColumn(name = "CCiudad", nullable = false)
+	private Ciudad ciudad;
 
-	public int getCAsesor() {
-		return CAsesor;
+	public Cliente() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public void setCAsesor(int cAsesor) {
-		CAsesor = cAsesor;
+	public Cliente(int cCliente, int nDNI, String nNombre, String nApellido, String tCorreo, Date fNacimiento,
+			String tContraseña, Ciudad ciudad) {
+		super();
+		CCliente = cCliente;
+		NDNI = nDNI;
+		NNombre = nNombre;
+		NApellido = nApellido;
+		TCorreo = tCorreo;
+		FNacimiento = fNacimiento;
+		TContraseña = tContraseña;
+		this.ciudad = ciudad;
 	}
 
-	public String getNnombre() {
-		return Nnombre;
+	public int getCCliente() {
+		return CCliente;
 	}
 
-	public void setNnombre(String nnombre) {
-		Nnombre = nnombre;
+	public void setCCliente(int cCliente) {
+		CCliente = cCliente;
 	}
 
-	public String getNapellido() {
-		return Napellido;
+	public int getNDNI() {
+		return NDNI;
 	}
 
-	public void setNapellido(String napellido) {
-		Napellido = napellido;
+	public void setNDNI(int nDNI) {
+		NDNI = nDNI;
 	}
 
-	public int getNdni() {
-		return Ndni;
+	public String getNNombre() {
+		return NNombre;
 	}
 
-	public void setNdni(int ndni) {
-		Ndni = ndni;
+	public void setNNombre(String nNombre) {
+		NNombre = nNombre;
 	}
 
-	public String getTcorreo() {
-		return Tcorreo;
+	public String getNApellido() {
+		return NApellido;
 	}
 
-	public void setTcorreo(String tcorreo) {
-		Tcorreo = tcorreo;
+	public void setNApellido(String nApellido) {
+		NApellido = nApellido;
 	}
 
-	public String getTcontraseña() {
-		return Tcontraseña;
+	public String getTCorreo() {
+		return TCorreo;
 	}
 
-	public void setTcontraseña(String tcontraseña) {
-		Tcontraseña = tcontraseña;
+	public void setTCorreo(String tCorreo) {
+		TCorreo = tCorreo;
 	}
 
-	public Especialidad getEspecialidad() {
-		return especialidad;
+	public Date getFNacimiento() {
+		return FNacimiento;
 	}
 
-	public void setEspecialidad(Especialidad especialidad) {
-		this.especialidad = especialidad;
+	public void setFNacimiento(Date fNacimiento) {
+		FNacimiento = fNacimiento;
 	}
+
+	public String getTContraseña() {
+		return TContraseña;
+	}
+
+	public void setTContraseña(String tContraseña) {
+		TContraseña = tContraseña;
+	}
+
+	public Ciudad getCiudad() {
+		return ciudad;
+	}
+
+	public void setCiudad(Ciudad ciudad) {
+		this.ciudad = ciudad;
+	}
+
 	
 	
 }
