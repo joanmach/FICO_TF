@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import pe.metrogo.spring.entity.EntidadBancaria;
-import pe.metrogo.spring.service.IEntidadBancariaService;
+import pe.edu.fico.spring.model.EntidadBancaria;
+import pe.edu.fico.spring.service.IEntidadBancariaService;
 
 @Controller
 @RequestMapping("/entidad")
@@ -40,7 +39,7 @@ public class EntidadBancariaController {
 	}
 
 	@RequestMapping("/registrar")
-	public String registrar(@ModelAttribute("entidad") @Valid EntidadBancaria entidad, BindingResult binRes, Model model)
+	public String registrar(@ModelAttribute EntidadBancaria entidad, BindingResult binRes, Model model)
 			throws ParseException {
 		if (binRes.hasErrors()) {
 			model.addAttribute("mensaje", "Ocurrio un error");

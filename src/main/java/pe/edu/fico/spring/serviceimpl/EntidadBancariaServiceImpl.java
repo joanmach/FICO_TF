@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import pe.metrogo.spring.entity.EntidadBancaria;
-import pe.metrogo.spring.repository.IEntidadBancariaRepository;
-import pe.metrogo.spring.service.IEntidadBancariaService;
+import pe.edu.fico.spring.model.EntidadBancaria;
+import pe.edu.fico.spring.repository.IEntidadBancariaRepository;
+import pe.edu.fico.spring.service.IEntidadBancariaService;
 
 @Service
 public class EntidadBancariaServiceImpl implements IEntidadBancariaService{
