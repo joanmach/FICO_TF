@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import javax.validation.Valid;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,14 +17,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import pe.metrogo.spring.entity.Cliente;
-import pe.metrogo.spring.entity.EntidadBancaria;
-import pe.metrogo.spring.entity.TarjetaCred;
-import pe.metrogo.spring.entity.TipotarjetaCred;
-import pe.metrogo.spring.service.IClienteService;
-import pe.metrogo.spring.service.IEntidadBancariaService;
-import pe.metrogo.spring.service.ITarjetaCredService;
-import pe.metrogo.spring.service.ITipotarjetaCredService;
+import pe.edu.fico.spring.model.Cliente;
+import pe.edu.fico.spring.model.EntidadBancaria;
+import pe.edu.fico.spring.model.TarjetaCred;
+import pe.edu.fico.spring.model.TipotarjetaCred;
+import pe.edu.fico.spring.service.IClienteService;
+import pe.edu.fico.spring.service.IEntidadBancariaService;
+import pe.edu.fico.spring.service.ITarjetaCredService;
+import pe.edu.fico.spring.service.ITipotarjetaCredService;
 
 @Controller
 @RequestMapping("/tarjeta")
@@ -66,7 +66,7 @@ public class TarjetaCredController {
 	}
 
 	@RequestMapping("/registrar")
-	public String registrar(@ModelAttribute("tarjeta") @Valid TarjetaCred tarjeta, BindingResult binRes, Model model)
+	public String registrar(@ModelAttribute TarjetaCred tarjeta, BindingResult binRes, Model model)
 			throws ParseException {
 		if (binRes.hasErrors()) {
 			model.addAttribute("listaClientes", cService.listar());

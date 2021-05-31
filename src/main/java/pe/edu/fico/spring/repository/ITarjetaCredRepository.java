@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import pe.metrogo.spring.entity.TarjetaCred;
+import pe.edu.fico.spring.model.TarjetaCred;
 
 @Repository
 public interface ITarjetaCredRepository extends JpaRepository<TarjetaCred, Integer> {

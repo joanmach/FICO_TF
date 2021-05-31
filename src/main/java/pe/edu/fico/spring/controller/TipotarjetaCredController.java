@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import javax.validation.Valid;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import pe.metrogo.spring.entity.TipotarjetaCred;
-import pe.metrogo.spring.service.ITipotarjetaCredService;
+import pe.edu.fico.spring.model.TipotarjetaCred;
+import pe.edu.fico.spring.service.ITipotarjetaCredService;
 
 @Controller
 @RequestMapping("/ttarjeta")
@@ -40,7 +40,7 @@ public class TipotarjetaCredController {
 	}
 
 	@RequestMapping("/registrar")
-	public String registrar(@ModelAttribute("ttarjeta") @Valid TipotarjetaCred ttarjeta, BindingResult binRes, Model model)
+	public String registrar(@ModelAttribute TipotarjetaCred ttarjeta, BindingResult binRes, Model model)
 			throws ParseException {
 		if (binRes.hasErrors()) {
 			return "ttarjeta";

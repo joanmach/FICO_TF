@@ -3,7 +3,7 @@ package pe.edu.fico.spring.service;
 import java.util.List;
 import java.util.Optional;
 
-import pe.metrogo.spring.entity.TarjetaCred;
+import pe.edu.fico.spring.model.TarjetaCred;
 
 public interface ITarjetaCredService {
 	

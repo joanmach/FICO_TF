@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import pe.metrogo.spring.entity.TarjetaCred;
-import pe.metrogo.spring.repository.ITarjetaCredRepository;
-import pe.metrogo.spring.service.ITarjetaCredService;
+import pe.edu.fico.spring.model.TarjetaCred;
+import pe.edu.fico.spring.repository.ITarjetaCredRepository;
+import pe.edu.fico.spring.service.ITarjetaCredService;
 
 @Service
 public class TarjetaCredServiceImpl implements ITarjetaCredService{
