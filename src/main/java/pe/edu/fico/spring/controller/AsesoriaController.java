@@ -23,7 +23,7 @@ import pe.edu.fico.spring.service.IAsesorService;
 import pe.edu.fico.spring.service.IAsesoriaService;
 
 @Controller
-@RequestMapping("/tarjeta")
+@RequestMapping("/asesoria")
 public class AsesoriaController {
 
 	@Autowired
