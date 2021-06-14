@@ -31,6 +31,9 @@ public class Asesor {
 	@Column(name="Tcorreo", nullable=false, length=30)
 	private String Tcorreo;
 	
+	@Column(name="Nusuario", nullable=false, length=30)
+	private String Nusuario;
+	
 	@Column(name="Tcontraseña", nullable=false, length=30)
 	private String Tcontraseña;
 	

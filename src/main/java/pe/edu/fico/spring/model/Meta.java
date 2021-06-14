@@ -7,7 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
@@ -25,9 +31,19 @@ public class Meta {
 	@Column(name="TDescripcion", nullable=false, length=50)
 	private String TDescripcion;
 	
+	@Temporal(TemporalType.DATE)
+	@Column(name="fechaInicio", nullable=false,length = 50)
+	@DateTimeFormat(pattern="yyy-MM-dd")
 	private Date FechaInicio;
 	
+	@Temporal(TemporalType.DATE)
+	@Column(name="fechaFin", nullable=false,length = 50)
+	@DateTimeFormat(pattern="yyy-MM-dd")
 	private Date FechaFin;
+	
+	@ManyToOne
+	@JoinColumn(name="CCliente", nullable=false)
+	private Cliente cliente;
 
 	public int getCMeta() {
 		return CMeta;
@@ -69,7 +85,15 @@ public class Meta {
 		FechaFin = fechaFin;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
 
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	
 	
 	
 }

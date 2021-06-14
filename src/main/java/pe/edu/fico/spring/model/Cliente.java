@@ -44,6 +44,9 @@ public class Cliente implements Serializable{
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date FNacimiento;
 	
+	@Column(name="NUsuaruio", nullable=false, length=30)
+	private String NUsuario;
+	
 	@Column(name="TContraseña", nullable=false, length=30)
 	private String TContraseña;
 	
@@ -57,7 +60,7 @@ public class Cliente implements Serializable{
 	}
 
 	public Cliente(int cCliente, int nDNI, String nNombre, String nApellido, String tCorreo, Date fNacimiento,
-			String tContraseña, Ciudad ciudad) {
+			String nUsuario, String tContraseña, Ciudad ciudad) {
 		super();
 		CCliente = cCliente;
 		NDNI = nDNI;
@@ -65,16 +68,13 @@ public class Cliente implements Serializable{
 		NApellido = nApellido;
 		TCorreo = tCorreo;
 		FNacimiento = fNacimiento;
+		NUsuario = nUsuario;
 		TContraseña = tContraseña;
 		this.ciudad = ciudad;
 	}
 
 	public int getCCliente() {
 		return CCliente;
-	}
-
-	public void setCCliente(int cCliente) {
-		CCliente = cCliente;
 	}
 
 	public int getNDNI() {
@@ -117,6 +117,14 @@ public class Cliente implements Serializable{
 		FNacimiento = fNacimiento;
 	}
 
+	public String getNUsuario() {
+		return NUsuario;
+	}
+
+	public void setNUsuario(String nUsuario) {
+		NUsuario = nUsuario;
+	}
+
 	public String getTContraseña() {
 		return TContraseña;
 	}
@@ -132,6 +140,14 @@ public class Cliente implements Serializable{
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudad = ciudad;
 	}
+
+	public void setCCliente(int cCliente) {
+		CCliente = cCliente;
+	}
+
+
+
+	
 
 	
 	
