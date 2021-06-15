@@ -43,6 +43,11 @@ public class AsesorController {
 	public String irAsesorBienvenido() {
 		return "bienvenido";
 	}
+	
+	@RequestMapping("/bienvenidoa")
+	public String irAsesorBienvenidoa() {
+		return "bienvenidoa";
+	}
 
 	@RequestMapping("/irRegistrar")
 	public String irRegistrar(Model model) {

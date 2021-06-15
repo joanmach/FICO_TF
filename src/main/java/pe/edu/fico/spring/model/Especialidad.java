@@ -24,6 +24,12 @@ public class Especialidad {
 	private String TDescripcion;
 
 	
+
+	
+	
+	
+	
+	
 	public int getCEspecialidad() {
 		return CEspecialidad;
 	}

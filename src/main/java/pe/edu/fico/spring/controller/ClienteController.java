@@ -43,7 +43,12 @@ public class ClienteController {
 	public String irClienteBienvenido() {
 		return "bienvenido";
 	}
-
+	
+	@RequestMapping("/bienvenidoc")
+	public String irClienteBienvenidoc() {
+		return "bienvenidoc";
+	}
+	
 	@RequestMapping("/irRegistrar")
 	public String irRegistrar(Model model) {
 		model.addAttribute("listaCiudades", cService.listar());

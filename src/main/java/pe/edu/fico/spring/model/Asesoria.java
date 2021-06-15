@@ -31,6 +31,26 @@ public class Asesoria {
 	@JoinColumn(name = "CAsesor", nullable = false)
 	private Asesor asesor;
 
+	
+	
+	
+	
+	public Asesoria() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	public Asesoria(int cAsesoria, String nAsesoria, String tDescripcion, int mPrecio, Asesor asesor) {
+		super();
+		CAsesoria = cAsesoria;
+		NAsesoria = nAsesoria;
+		TDescripcion = tDescripcion;
+		MPrecio = mPrecio;
+		this.asesor = asesor;
+	}
+
+
 	public int getCAsesoria() {
 		return CAsesoria;
 	}

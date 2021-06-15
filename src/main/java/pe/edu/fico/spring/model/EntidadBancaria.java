@@ -18,6 +18,25 @@ public class EntidadBancaria {
 	
 	@Column(name="NEntidad", nullable=false, length=30)
 	private String NEntidad;
+	
+	
+	
+	
+
+	public EntidadBancaria() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+	public EntidadBancaria(int cEntidad, String nEntidad) {
+		super();
+		CEntidad = cEntidad;
+		NEntidad = nEntidad;
+	}
+
+
 
 	public int getCEntidad() {
 		return CEntidad;

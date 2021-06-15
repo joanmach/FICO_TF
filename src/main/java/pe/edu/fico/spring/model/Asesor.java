@@ -40,6 +40,31 @@ public class Asesor {
 	@ManyToOne
 	@JoinColumn(name = "CEspecialidad", nullable = false)
 	private Especialidad especialidad;
+	
+	
+	
+
+	public Asesor() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+	public Asesor(int cAsesor, String nnombre, String napellido, int ndni, String tcorreo, String nusuario,
+			String tcontraseña, Especialidad especialidad) {
+		super();
+		CAsesor = cAsesor;
+		Nnombre = nnombre;
+		Napellido = napellido;
+		Ndni = ndni;
+		Tcorreo = tcorreo;
+		Nusuario = nusuario;
+		Tcontraseña = tcontraseña;
+		this.especialidad = especialidad;
+	}
+
+
 
 	public int getCAsesor() {
 		return CAsesor;
