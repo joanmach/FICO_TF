@@ -30,6 +30,22 @@ public class Reserva {
 	@JoinColumn(name = "CHorario", nullable = false)
 	private Horario horario;
 
+	
+	public Reserva() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Reserva(int cReserva, Asesoria asesoria, Cliente cliente, Horario horario) {
+		super();
+		CReserva = cReserva;
+		this.asesoria = asesoria;
+		this.cliente = cliente;
+		this.horario = horario;
+	}
+
+
 	public int getCReserva() {
 		return CReserva;
 	}

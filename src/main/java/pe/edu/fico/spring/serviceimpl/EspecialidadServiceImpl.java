@@ -49,14 +49,14 @@ public class EspecialidadServiceImpl implements IEspecialidadService{
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public Optional<Especialidad> listarId(int CEspecialidad) {
 		// TODO Auto-generated method stub
 		return dEspecialidad.findById(CEspecialidad);
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Especialidad> listar() {
 		// TODO Auto-generated method stub
 		return dEspecialidad.findAll();

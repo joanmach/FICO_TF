@@ -46,7 +46,7 @@ public class ClienteController {
 	
 	@RequestMapping("/bienvenidoc")
 	public String irClienteBienvenidoc() {
-		return "bienvenidoc";
+		return "bienvenidoC";
 	}
 	
 	@RequestMapping("/irRegistrar")

@@ -33,6 +33,26 @@ public class TarjetaCred {
 	@JoinColumn(name = "CDNI", nullable = false)
 	private Cliente cliente;
 	
+	
+	
+	
+	
+	
+	public TarjetaCred() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public TarjetaCred(int cTarjeta, String numTarjeta, EntidadBancaria entidad, TipotarjetaCred ttarjeta,
+			Cliente cliente) {
+		super();
+		CTarjeta = cTarjeta;
+		this.numTarjeta = numTarjeta;
+		this.entidad = entidad;
+		this.ttarjeta = ttarjeta;
+		this.cliente = cliente;
+	}
+
 	public int getCTarjeta() {
 		return CTarjeta;
 	}

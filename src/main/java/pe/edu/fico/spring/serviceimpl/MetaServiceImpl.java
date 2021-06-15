@@ -49,14 +49,14 @@ public class MetaServiceImpl implements IMetaService{
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public Optional<Meta> listarId(int CMeta) {
 		// TODO Auto-generated method stub
 		return dMeta.findById(CMeta);
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Meta> listar() {
 		// TODO Auto-generated method stub
 		return dMeta.findAll();

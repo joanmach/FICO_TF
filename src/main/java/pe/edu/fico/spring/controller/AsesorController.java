@@ -46,7 +46,7 @@ public class AsesorController {
 	
 	@RequestMapping("/bienvenidoa")
 	public String irAsesorBienvenidoa() {
-		return "bienvenidoa";
+		return "bienvenidoA";
 	}
 
 	@RequestMapping("/irRegistrar")

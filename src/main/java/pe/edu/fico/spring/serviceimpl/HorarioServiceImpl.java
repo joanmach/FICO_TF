@@ -49,14 +49,14 @@ public class HorarioServiceImpl implements IHorarioService{
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public Optional<Horario> listarId(int CHorario) {
 		
 		return dHorario.findById(CHorario);
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Horario> listar() {
 	
 		return dHorario.findAll();

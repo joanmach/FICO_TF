@@ -49,14 +49,14 @@ public class EntidadBancariaServiceImpl implements IEntidadBancariaService{
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public Optional<EntidadBancaria> listarId(int CEntidad) {
 		// TODO Auto-generated method stub
 		return dEntidad.findById(CEntidad);
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<EntidadBancaria> listar() {
 		// TODO Auto-generated method stub
 		return dEntidad.findAll();

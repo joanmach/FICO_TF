@@ -47,13 +47,13 @@ public class ClienteServiceImpl implements IClienteService{
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public Optional<Cliente> listarId(int CCliente) {
 		return dCliente.findById(CCliente);
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Cliente> listar() {
 		return dCliente.findAll();
 	}

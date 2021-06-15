@@ -48,13 +48,13 @@ public class ReservaServiceImpl implements IReservaService{
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public Optional<Reserva> listarId(int CReserva) {
 		return dRe.findById(CReserva);
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Reserva> listar() {
 		return dRe.findAll();
 	}

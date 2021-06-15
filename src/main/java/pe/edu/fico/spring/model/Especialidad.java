@@ -30,6 +30,20 @@ public class Especialidad {
 	
 	
 	
+	public Especialidad() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Especialidad(int cEspecialidad, String nEspecialidad, String tDescripcion) {
+		super();
+		CEspecialidad = cEspecialidad;
+		NEspecialidad = nEspecialidad;
+		TDescripcion = tDescripcion;
+	}
+
+
 	public int getCEspecialidad() {
 		return CEspecialidad;
 	}

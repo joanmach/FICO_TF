@@ -48,13 +48,13 @@ public class TarjetaCredServiceImpl implements ITarjetaCredService{
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public Optional<TarjetaCred> listarId(int CTarjeta) {
 		return dTar.findById(CTarjeta);
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<TarjetaCred> listar() {
 		return dTar.findAll();
 	}

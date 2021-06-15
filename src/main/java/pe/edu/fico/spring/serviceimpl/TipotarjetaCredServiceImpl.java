@@ -49,14 +49,14 @@ public class TipotarjetaCredServiceImpl implements ITipotarjetaCredService{
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public Optional<TipotarjetaCred> listarId(int CTTarjeta) {
 		// TODO Auto-generated method stub
 		return dTTarjeta.findById(CTTarjeta);
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<TipotarjetaCred> listar() {
 		// TODO Auto-generated method stub
 		return dTTarjeta.findAll();

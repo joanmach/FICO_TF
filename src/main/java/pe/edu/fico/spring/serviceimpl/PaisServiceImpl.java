@@ -51,7 +51,7 @@ public class PaisServiceImpl implements IPaisService{
 		return dPais.findById(CPais);
 	}
 
-	@Override
+	@Transactional(readOnly = true)
 	public List<Pais> listar() {
 		return dPais.findAll();
 	}

@@ -48,13 +48,13 @@ public class AsesoriaServiceImpl implements IAsesoriaService{
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public Optional<Asesoria> listarId(int CAsesoria) {
 		return dAsesoria.findById(CAsesoria);
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Asesoria> listar() {
 		return dAsesoria.findAll();
 	}

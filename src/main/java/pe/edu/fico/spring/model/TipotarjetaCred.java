@@ -21,6 +21,21 @@ public class TipotarjetaCred {
 	private String NTTarjeta;
 
 
+	
+	
+	public TipotarjetaCred() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public TipotarjetaCred(int cTTarjeta, String nTTarjeta) {
+		super();
+		CTTarjeta = cTTarjeta;
+		NTTarjeta = nTTarjeta;
+	}
+
+
 	public int getCTTarjeta() {
 		return CTTarjeta;
 	}

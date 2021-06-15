@@ -49,14 +49,14 @@ public class AsesorServiceImpl implements IAsesorService{
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public Optional<Asesor> listarId(int CAsesor) {
 		// TODO Auto-generated method stub
 		return dAsesor.findById(CAsesor);
 	}
 
 	@Override
-	@Transactional
+	@Transactional(readOnly = true)
 	public List<Asesor> listar() {
 		// TODO Auto-generated method stub
 		return dAsesor.findAll();
