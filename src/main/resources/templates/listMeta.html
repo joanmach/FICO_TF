@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Mascotas</title>
+		<title>Meta</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -22,46 +22,52 @@
 	</head>
 	
 	<body>
-		<div th:replace="fragments/header :: header"></div>
+		<div th:replace="fragments/headerC :: header"></div>
 		
 		<div class="container">
 			<form id="myform">
 				<div class="row clearfix">
 					<div class="col-md-12 column">
-						<a 	style="border-bottom-color: black" th:href="@{/pet/irRegistrar}" id="add-row"
+						<a 	style="border-bottom-color: black" th:href="@{/meta/irRegistrar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
-							<span class="glyphicon glyphicon-plus"></span> Mascota
+							<span class="glyphicon glyphicon-plus"></span> Meta
 						</a>
 						
-						<a 	style="border-bottom-color: black" th:href="@{/pet/irBuscar}" id="add-row"
+						<a 	style="border-bottom-color: black" th:href="@{/meta/irBuscar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
 							<span class="glyphicon glyphicon-search"></span> Buscar
 						</a>
 						
+						
+						
+						
 						<table class="table table-bordered table-hover table-striped" id="tab_logic">
+						
 							<thead>
 								<tr>
 									<th class="text-center">CODIGO</th>
-									<th class="text-center">MASCOTA</th>
-									<th class="text-center">FEC. NACIMIENTO</th>
-									<th class="text-center">RAZA</th>
-									<th class="text-center">PROPIETARIO</th>
+									<th class="text-center">META</th>
+							        <th class="text-center">DESCRIPCION</th>
+									<th class="text-center">FEC. INICIO</th>
+									<th class="text-center">FEC. FIN</th>
+									<th class="text-center">CLIENTE</th>
 									<th class="text-center">OPERACION</th>
 									<th class="text-center">OPERACION</th>
 								</tr>
 							</thead>
 							
 							<tbody>
-								<tr th:each="p: ${listaMascotas}">
-									<td th:text="${p.idPet}"></td>
-									<td th:text="${p.namePet}"></td>
-									<td th:text="${#dates.format(p.birthDatePet,'dd/MM/yyyy')}"></td>
-									<td th:text="${p.race.nameRace}"></td>
-									<td th:text="${p.dueno.nameDueno}"></td>
-									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/pet/eliminar?id=}+${p.idPet}"> Eliminar</a></td>
-									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/pet/modificar/' + ${p.idPet}}"> Modificar</a></td>
+								<tr th:each="m: ${listaMetas}">
+									<td th:text="${m.CMeta}"></td>
+									<td th:text="${m.NMeta}"></td>
+									<td th:text="${m.TDescripcion}"></td>
+									<td th:text="${#dates.format(m.FechaInicio,'dd/MM/yyyy')}"></td>
+									<td th:text="${#dates.format(m.FechaFin,'dd/MM/yyyy')}"></td>
+									<td th:text="${m.cliente.NNombre}"></td>
+									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/meta/eliminar?id=}+${m.CMeta}"> Eliminar</a></td>
+									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/meta/modificar/' + ${m.CMeta}}"> Modificar</a></td>
 								</tr>
 							</tbody>
 						</table>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title>Cliente</title>
+		
+		<script type="text/javascript"
+				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
+		</script>
+		
+		<link
+			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+			rel="stylesheet" id="bootstrap-css">
+		</link>
+		
+		<script
+			src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js">
+		</script>
+		
+		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+	</head>
+	
+	<body>
+		<div th:replace="fragments/headerC :: header"></div>
+		
+		<div class="container">
+			<form th:action="@{/cliente/registrar}" method="post" th:object="${cliente}">
+				<div class="form-group">
+					<label for="ccliente">ID:</label>
+					<input type="text" class="form-control" th:field="*{CCliente}"></input>
+					<br>
+					<div class="form-group">
+						<label for="dni">DNI:</label>
+						<input type="text" class="form-control" th:field="*{NDNI}" id="dni" maxlength="8"></input>
+					<div class="alert alert-danger" th:if="${#fields.hasErrors('NDNI')}" 
+							th:errors="*{NDNI}">						
+						</div>
+					<div class="form-group">
+						<label for="nombre">NOMBRE:</label>
+						<input type="text" class="form-control" th:field="*{NNombre}" id="nombre"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('NNombre')}" 
+							th:errors="*{NNombre}">						
+						</div>
+					<div class="form-group">
+						<label for="apellido">APELLIDO:</label>
+						<input type="text" class="form-control" th:field="*{NApellido}" id="apellido"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('NApellido')}" 
+							th:errors="*{NApellido}">						
+						</div>
+						
+						<div class="form-group">
+						<label for="correo">CORREO:</label>
+						<input type="email" class="form-control" th:field="*{TCorreo}" id="correo"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('TCorreo')}" 
+							th:errors="*{TCorreo}">						
+						</div>
+						
+						<label for="fechadeNacimiento">FECHA DE NACIMIENTO:</label>
+						<input type="date" class="form-control" th:field="*{FNacimiento}" id="fechadeNacimiento"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('FNacimiento')}" 
+							th:errors="*{FNacimiento}">						
+						</div>
+							<div class="form-group">
+							
+						<label for="usuario">USUARIO:</label>
+						<input type="text" class="form-control" th:field="*{NUsuario}" id="usuario"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('NUsuario')}" 
+							th:errors="*{NUsuario}">						
+						</div>
+						
+						<div class="form-group">
+						<label for="contraseña">Contraseña:</label>
+						<input type="text" class="form-control" th:field="*{TContraseña}" id="contraseña"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('TContraseña')}" 
+							th:errors="*{TContraseña}">						
+						</div>
+						
+					
+						<label for="ciudad" class="col-sm-2 col-form-label">CIUDAD:</label>
+						<select class ="form-control" th:field="*{ciudad.CCiudad}">
+						<option th:each ="ciu:${listaCiudades}" th:value= "${ciu.CCiudad}"
+						        th:text="${ciu.NCiudad}"
+						        th:selected= "(${ciu.CCiudad}== *{ciudad.CCiudad})">
+						</option>
+						</select>
+						
+						
+					</div>
+				
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Aceptar</button>
+				<a href="/cliente/listar" class="btn btn-danger">Cancelar</a>
+				
+			</form>
+		</div>
+		
+		<div th:replace="fragments/footer :: footer"></div>
+	</body>
+	
+</html>

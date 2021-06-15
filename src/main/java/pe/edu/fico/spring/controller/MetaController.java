@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import pe.edu.fico.spring.model.Cliente;
 import pe.edu.fico.spring.model.Meta;
+import pe.edu.fico.spring.service.IClienteService;
 import pe.edu.fico.spring.service.IMetaService;
 
 @Controller
@@ -24,6 +26,9 @@ public class MetaController {
 
 	@Autowired
 	private IMetaService mService;
+	
+	@Autowired
+	private IClienteService cService;
 
 	@RequestMapping("/")
 	public String irMeta(Map<String, Object> model) {
@@ -33,6 +38,8 @@ public class MetaController {
 
 	@RequestMapping("/irRegistrar")
 	public String irRegistrar(Model model) {
+		model.addAttribute("listaClientes", cService.listar());
+		model.addAttribute("cliente", new Cliente());
 		model.addAttribute("meta", new Meta());
 		return "meta";
 	}
@@ -60,7 +67,9 @@ public class MetaController {
 			objRedir.addFlashAttribute("mensaje", "Ocurrio un error");
 			return "redirect:/meta/listar";
 		} else {
-			model.addAttribute("meta", objMeta);
+			model.addAttribute("listaClientes", cService.listar());
+			if (objMeta.isPresent())
+				objMeta.ifPresent(o -> model.addAttribute("meta", o));
 			return "meta";
 		}
 	}

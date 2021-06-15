@@ -83,7 +83,7 @@ public class ClienteController {
 		} else {
 			model.addAttribute("listaCiudades", cService.listar());
 			if (objCliente.isPresent())
-				objCliente.ifPresent(o -> model.addAttribute("asesor", o));
+				objCliente.ifPresent(o -> model.addAttribute("cliente", o));
 			return "cliente";
 		}
 	}

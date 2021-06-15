@@ -32,12 +32,12 @@ public class Meta {
 	private String TDescripcion;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name="fechaInicio", nullable=false,length = 50)
+	@Column(name="FechaInicio", nullable=false,length = 50)
 	@DateTimeFormat(pattern="yyy-MM-dd")
 	private Date FechaInicio;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name="fechaFin", nullable=false,length = 50)
+	@Column(name="FechaFin", nullable=false,length = 50)
 	@DateTimeFormat(pattern="yyy-MM-dd")
 	private Date FechaFin;
 	
