@@ -22,72 +22,42 @@
 	</head>
 	
 	<body>
-		<div th:replace="fragments/headerC :: header"></div>
+		<div th:replace="fragments/headerA :: header"></div>
 		
 		<div class="container">
-			<form th:action="@{/cliente/registrar}" method="post" th:object="${cliente}">
+			<form th:action="@{/Asesoria/registrar}" method="post" th:object="${asesoria}">
 				<div class="form-group">
-					<label for="ccliente">ID:</label>
-					<input type="text" class="form-control" th:field="*{CCliente}"></input>
+					<label for="casesoria">ID:</label>
+					<input type="text" class="form-control" th:field="*{CAsesoria}"></input>
 					<br>
 					<div class="form-group">
-						<label for="dni">DNI:</label>
-						<input type="text" class="form-control" th:field="*{NDNI}" id="dni" maxlength="8"></input>
-					<div class="alert alert-danger" th:if="${#fields.hasErrors('NDNI')}" 
-							th:errors="*{NDNI}">						
-						</div>
-					<div class="form-group">
 						<label for="nombre">NOMBRE:</label>
-						<input type="text" class="form-control" th:field="*{NNombre}" id="nombre"></input>
+						<input type="text" class="form-control" th:field="*{NAsesoria}" id="nombre"></input>
 						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('NNombre')}" 
-							th:errors="*{NNombre}">						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('NAsesoria')}" 
+							th:errors="*{NAsesoria}">						
 						</div>
 					<div class="form-group">
-						<label for="apellido">APELLIDO:</label>
-						<input type="text" class="form-control" th:field="*{NApellido}" id="apellido"></input>
+						<label for="descripcion">DESCRIPCION:</label>
+						<input type="text" class="form-control" th:field="*{TDescripcion}" id="descripcion"></input>
 						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('NApellido')}" 
-							th:errors="*{NApellido}">						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('TDescripcion')}" 
+							th:errors="*{TDescripcion}">						
 						</div>
 						
 						<div class="form-group">
-						<label for="correo">CORREO:</label>
-						<input type="email" class="form-control" th:field="*{TCorreo}" id="correo"></input>
+						<label for="precio">PRECIO:</label>
+						<input type="text" class="form-control" th:field="*{MPrecio}" id="precio"></input>
 						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('TCorreo')}" 
-							th:errors="*{TCorreo}">						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('MPrecio')}" 
+							th:errors="*{MPrecio}">						
 						</div>
-						
-						<label for="fechadeNacimiento">FECHA DE NACIMIENTO:</label>
-						<input type="date" class="form-control" th:field="*{FNacimiento}" id="fechadeNacimiento"></input>
-						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('FNacimiento')}" 
-							th:errors="*{FNacimiento}">						
-						</div>
-							<div class="form-group">
-							
-						<label for="usuario">USUARIO:</label>
-						<input type="text" class="form-control" th:field="*{NUsuario}" id="usuario"></input>
-						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('NUsuario')}" 
-							th:errors="*{NUsuario}">						
-						</div>
-						
-						<div class="form-group">
-						<label for="contraseña">CONTRASEÑA:</label>
-						<input type="text" class="form-control" th:field="*{TContraseña}" id="contraseña"></input>
-						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('TContraseña')}" 
-							th:errors="*{TContraseña}">						
-						</div>
-						
 					
-						<label for="ciudad" class="col-sm-2 col-form-label">CIUDAD:</label>
-						<select class ="form-control" th:field="*{ciudad.CCiudad}">
-						<option th:each ="ciu:${listaCiudades}" th:value= "${ciu.CCiudad}"
-						        th:text="${ciu.NCiudad}"
-						        th:selected= "(${ciu.CCiudad}== *{ciudad.CCiudad})">
+						<label for="asesor" class="col-sm-2 col-form-label">ASESOR:</label>
+						<select class ="form-control" th:field="*{asesor.CAsesor}">
+						<option th:each ="ase:${listaAsesores}" th:value= "${ase.CAsesor}"
+						        th:text="${ase.Nnombre}"
+						        th:selected= "(${ase.CAsesor}== *{asesor.CAsesor})">
 						</option>
 						</select>
 						
@@ -97,7 +67,7 @@
 				</div>
 				
 				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/cliente/listar" class="btn btn-danger">Cancelar</a>
+				<a href="/asesoria/listar" class="btn btn-danger">Cancelar</a>
 				
 			</form>
 		</div>
