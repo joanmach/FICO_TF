@@ -77,7 +77,7 @@
 								<tr th:each="ae: ${listaAsesorias}">
 									<td th:text="${ae.CAsesoria}"></td>
 									<td th:text="${ae.NAsesoria}"></td>
-									<td th:text="${ae.TDescipcion}"></td>
+									<td th:text="${ae.TDescripcion}"></td>
 									<td th:text="${ae.MPrecio}"></td>
 									<td th:text="${ae.asesor.Nnombre}"></td>
 									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/asesoria/eliminar?id=}+${ae.CAsesoria}"> Eliminar</a></td>

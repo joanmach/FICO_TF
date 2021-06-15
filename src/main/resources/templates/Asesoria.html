@@ -25,7 +25,7 @@
 		<div th:replace="fragments/headerA :: header"></div>
 		
 		<div class="container">
-			<form th:action="@{/Asesoria/registrar}" method="post" th:object="${asesoria}">
+			<form th:action="@{/asesoria/registrar}" method="post" th:object="${asesoria}">
 				<div class="form-group">
 					<label for="casesoria">ID:</label>
 					<input type="text" class="form-control" th:field="*{CAsesoria}"></input>
