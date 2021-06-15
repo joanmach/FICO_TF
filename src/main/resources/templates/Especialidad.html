@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>CIUDAD</title>
+		<title>ESPECIALIDAD</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -25,37 +25,29 @@
 		<div th:replace="fragments/headerC :: header"></div>
 		
 		<div class="container">
-			<form th:action="@{/ciudad/registrar}" method="post" th:object="${ciudad}">
+			<form th:action="@{/especialidad/registrar}" method="post" th:object="${especialidad}">
 				<div class="form-group">
-					<label for="cciudad">ID:</label>
-					<input type="text" class="form-control" th:field="*{CCiudad}"></input>
+					<label for="CEspecialidad">ID:</label>
+					<input type="text" class="form-control" th:field="*{CEspecialidad}"></input>
 					<br>
 					<div class="form-group">
 						<label for="nombre">NOMBRE:</label>
-						<input type="text" class="form-control" th:field="*{NCiudad}" id="nombre"></input>
+						<input type="text" class="form-control" th:field="*{NEspecialidad}" id="nombre"></input>
 						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('NCiudad')}" 
-							th:errors="*{NCiudad}">						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('NEspecialidad')}" 
+							th:errors="*{NEspecialidad}">						
 						</div>
-					
 						
-						<label for="ciudad" class="col-sm-2 col-form-label">PAIS:</label>
-						<select class ="form-control" th:field="*{pais.CPais}">
-						<option th:each ="p:${listaPaises}" th:value="${p.CPais}"
-						        th:text="${p.NPais}"
-						        th:selected= "(${p.CPais} == *{pais.CPais})">
-						</option>
-						</select>
-						
-		
-						
+							<div class="form-group">
+						<label for="nombre">DESCRIPCION:</label>
+						<input type="text" class="form-control" th:field="*{TDescripcion}" id="descripcion"></input>				
 						
 					</div>
 				
 				</div>
 				
 				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/ciudad/listar" class="btn btn-danger">Cancelar</a>
+				<a href="/especialidad/listar" class="btn btn-danger">Cancelar</a>
 				
 			</form>
 		</div>
