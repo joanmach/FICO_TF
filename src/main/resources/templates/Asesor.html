@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title>Asesor</title>
+		
+		<script type="text/javascript"
+				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
+		</script>
+		
+		<link
+			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+			rel="stylesheet" id="bootstrap-css">
+		</link>
+		
+		<script
+			src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js">
+		</script>
+		
+		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+	</head>
+	
+	<body>
+		<div th:replace="fragments/headerA :: header"></div>
+		
+		<div class="container">
+			<form th:action="@{/asesor/registrar}" method="post" th:object="${asesor}">
+				<div class="form-group">
+					<label for="casesor">ID:</label>
+					<input type="text" class="form-control" th:field="*{CAsesor}"></input>
+					<br>
+					<div class="form-group">
+						<label for="dni">DNI:</label>
+						<input type="text" class="form-control" th:field="*{Ndni}" id="dni" maxlength="8"></input>
+					<div class="alert alert-danger" th:if="${#fields.hasErrors('Ndni')}" 
+							th:errors="*{Ndni}">						
+						</div>
+					<div class="form-group">
+						<label for="nombre">NOMBRE:</label>
+						<input type="text" class="form-control" th:field="*{Nnombre}" id="nombre"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('Nnombre')}" 
+							th:errors="*{Nnombre}">						
+						</div>
+					<div class="form-group">
+						<label for="apellido">APELLIDO:</label>
+						<input type="text" class="form-control" th:field="*{Napellido}" id="apellido"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('Napellido')}" 
+							th:errors="*{Napellido}">						
+						</div>
+						
+						<div class="form-group">
+						<label for="correo">CORREO:</label>
+						<input type="email" class="form-control" th:field="*{Tcorreo}" id="correo"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('Tcorreo')}" 
+							th:errors="*{Tcorreo}">						
+						</div>
+						
+						<div class="form-group">	
+						<label for="usuario">USUARIO:</label>
+						<input type="text" class="form-control" th:field="*{Nusuario}" id="usuario"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('Nusuario')}" 
+							th:errors="*{Nusuario}">					
+						</div>
+						
+						<div class="form-group">
+						<label for="contraseña">CONTRASEÑA:</label>
+						<input type="text" class="form-control" th:field="*{Tcontraseña}" id="contraseña"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('Tcontraseña')}" 
+							th:errors="*{Tcontraseña}">						
+						</div>
+						
+					
+						<label for="especialidad" class="col-sm-2 col-form-label">Especialidad:</label>
+						<select class ="form-control" th:field="*{especialidad.CEspecialidad}">
+						<option th:each ="esp:${listaEspecialidades}" th:value= "${esp.CEspecialidad}"
+						        th:text="${esp.NEspecialidad}"
+						        th:selected= "(${esp.CEspecialidad}== *{especialidad.CEspecialidad})">
+						</option>
+						</select>
+						
+						
+					</div>
+				
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Aceptar</button>
+				<a href="/asesor/listar" class="btn btn-danger">Cancelar</a>
+				
+			</form>
+		</div>
+		
+		<div th:replace="fragments/footer :: footer"></div>
+	</body>
+	
+</html>

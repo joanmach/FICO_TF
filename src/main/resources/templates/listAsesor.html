@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>CIUDAD</title>
+		<title>Asesor</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -28,31 +28,39 @@
 			<form id="myform">
 				<div class="row clearfix">
 					<div class="col-md-12 column">
-						<a 	style="border-bottom-color: black" th:href="@{/especialidad/irRegistrar}" id="add-row"
+
+						<a 	style="border-bottom-color: black" th:href="@{/asesor/irRegistrar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
-							<span class="glyphicon glyphicon-plus"></span> Especialidad
+							<span class="glyphicon glyphicon-plus"></span> Asesor
 						</a>
-						
 						
 						<table class="table table-bordered table-hover table-striped" id="tab_logic">
 							<thead>
 								<tr>
 									<th class="text-center">CODIGO</th>
+									<th class="text-center">DNI</th>
 									<th class="text-center">NOMBRE</th>
-									<th class="text-center">DESCRIPCION</th>
+									<th class="text-center">APELLIDO</th>
+									<th class="text-center">CORREO</th>
+									<th class="text-center">USUARIO</th>
+									<th class="text-center">ESPECIALIDAD</th>
 									<th class="text-center">OPERACION</th>
 									<th class="text-center">OPERACION</th>
 								</tr>
 							</thead>
 							
 							<tbody>
-								<tr th:each="esp: ${listaEspecialidades}">
-									<td th:text="${esp.CEspecialidad}"></td>
-									<td th:text="${esp.NEspecialidad}"></td>
-									<td th:text="${esp.TDescripcion}"></td>
-									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/especialidad/eliminar?id=}+${esp.CEspecialidad}"> Eliminar</a></td>
-									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/especialidad/modificar/' + ${esp.CEspecialidad}}"> Modificar</a></td>
+								<tr th:each="ase: ${listaAsesores}">
+									<td th:text="${ase.CAsesor}"></td>
+									<td th:text="${ase.Ndni}"></td>
+									<td th:text="${ase.Nnombre}"></td>
+									<td th:text="${ase.Napellido}"></td>
+									<td th:text="${ase.Tcorreo}"></td>
+									<td th:text="${ase.Nusuario}"></td>
+									<td th:text="${ase.especialidad.NEspecialidad}"></td>
+									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/asesor/eliminar?id=}+${ase.CAsesor}"> Eliminar</a></td>
+									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/asesor/modificar/' + ${ase.CAsesor}}"> Modificar</a></td>
 								</tr>
 							</tbody>
 						</table>
