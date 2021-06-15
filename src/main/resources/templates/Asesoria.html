@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Cliente</title>
+		<title>Asesoria</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -40,27 +40,20 @@
 					<div class="form-group">
 						<label for="descripcion">DESCRIPCION:</label>
 						<input type="text" class="form-control" th:field="*{TDescripcion}" id="descripcion"></input>
-						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('TDescripcion')}" 
-							th:errors="*{TDescripcion}">						
 						</div>
 						
-						<div class="form-group">
+					<div class="form-group">
 						<label for="precio">PRECIO:</label>
 						<input type="text" class="form-control" th:field="*{MPrecio}" id="precio"></input>
-						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('MPrecio')}" 
-							th:errors="*{MPrecio}">						
 						</div>
 					
 						<label for="asesor" class="col-sm-2 col-form-label">ASESOR:</label>
 						<select class ="form-control" th:field="*{asesor.CAsesor}">
-						<option th:each ="ase:${listaAsesores}" th:value= "${ase.CAsesor}"
-						        th:text="${ase.Nnombre}"
-						        th:selected= "(${ase.CAsesor}== *{asesor.CAsesor})">
+						<option th:each ="ases:${listaAsesores}" th:value= "${ases.CAsesor}"
+						        th:text="${ases.Nnombre}"
+						        th:selected= "(${ases.CAsesor}==*{asesor.CAsesor})">
 						</option>
 						</select>
-						
 						
 					</div>
 				
