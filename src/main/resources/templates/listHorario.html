@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title>Horario</title>
+		
+		<script type="text/javascript"
+				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
+		</script>
+		
+		<link
+			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+			rel="stylesheet" id="bootstrap-css">
+		</link>
+		
+		<script
+			src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js">
+		</script>
+		
+		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+	</head>
+	
+	<body>
+		<div th:replace="fragments/headerA :: header"></div>
+		
+		<div class="container">
+			<form id="myform">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+
+						<a 	style="border-bottom-color: black" th:href="@{/horario/irRegistrar}" id="add-row"
+						   	type = "button"
+						   	class= "btn btn-primary btn-md left-block">
+							<span class="glyphicon glyphicon-plus"></span> Horario
+						</a>
+						
+						<table class="table table-bordered table-hover table-striped" id="tab_logic">
+							<thead>
+								<tr>
+									<th class="text-center">CODIGO</th>
+									<th class="text-center">FEC.INICIO</th>
+									<th class="text-center">FEC.FIN</th>
+<!-- 									<th class="text-center">HORA.INICIO</th> -->
+<!-- 									<th class="text-center">HORA.FIN</th> -->
+									<th class="text-center">ELIMINAR</th>
+									<th class="text-center">MODIFICAR</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								<tr th:each="ho: ${listaHorarios}">
+									<td th:text="${ho.CHorario}"></td>
+									<td th:text="${#dates.format(ho.FechaInicio,'dd/MM/yyyy')}"></td>
+									<td th:text="${#dates.format(ho.FechaFin,'dd/MM/yyyy')}"></td>
+<!-- 									<td th:value="${#dates.format(ho.HoraInicio, 'HH:mm')}"></td> -->
+<!-- 									<td th:value="${#dates.format(ho.HoraFin, 'HH:mm')}"></td> -->
+									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/horario/eliminar?id=}+${ho.CHorario}"> Eliminar</a></td>
+									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/horario/modificar/' + ${ho.CHorario}}"> Modificar</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div th:if="${mensaje}" class="alert alert-danger">
+					<p th:text="${mensaje}"></p>
+				</div>
+			</form>
+		</div>
+		
+		<div th:replace="fragments/footer :: footer"></div>
+	</body>
+	
+</html>

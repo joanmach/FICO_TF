@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title>Horario</title>
+		
+		<script type="text/javascript"
+				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
+		</script>
+		
+		<link
+			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+			rel="stylesheet" id="bootstrap-css">
+		</link>
+		
+		<script
+			src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js">
+		</script>
+		
+		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+	</head>
+	
+	<body>
+		<div th:replace="fragments/headerA :: header"></div>
+		
+		<div class="container">
+			<form th:action="@{/horario/registrar}" method="post" th:object="${horario}">
+			
+				<div class="form-group">
+					<label for="cHorario">ID:</label>
+					<input type="text" class="form-control" th:field="*{CHorario}"></input>
+					<br>
+					
+					<div class="form-group">
+						<label for="fechaInicio">FECHA DE INICIO:</label>
+						<input type="date" class="form-control" th:field="*{FechaInicio}" id="fechaInicio"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('FechaInicio')}" 
+							th:errors="*{FechaInicio}">						
+						</div>
+							
+					<div class="form-group">
+							<label for="fechaFin">FECHA DE FIN:</label>
+						<input type="date" class="form-control" th:field="*{FechaFin}" id="fechaFin"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('FechaFin')}" 
+							th:errors="*{FechaFin}">						
+						</div>
+						
+<!-- 					<div class="form-group">	 -->
+<!-- 							<label for="horaInicio">HORA DE INICIO:</label> -->
+<!-- 						<input type="datetime" class="form-control" th:field="*{HoraInicio}" id="HoraInicio"></input> -->
+						
+<!-- 						<div class="alert alert-danger" th:if="${#fields.hasErrors('HoraInicio')}"  -->
+<!-- 							th:errors="*{HoraInicio}">						 -->
+<!-- 						</div> -->
+						
+						
+<!-- 					<div class="form-group"> -->
+							
+<!-- 							<label for="horaFin">HORA DE FIN:</label> -->
+<!-- 						<input type="datetime" class="form-control" th:field="*{HoraFin}" id="HoraFin"></input> -->
+						
+<!-- 						<div class="alert alert-danger" th:if="${#fields.hasErrors('HoraFin')}"  -->
+<!-- 							th:errors="*{HoraFin}">						 -->
+<!-- 						</div> -->
+<!-- 							<div class="form-group"> -->
+							
+							
+					
+						
+						
+					</div>
+				
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Aceptar</button>
+				<a href="/horario/listar" class="btn btn-danger">Cancelar</a>
+				
+			</form>
+		</div>
+		
+		<div th:replace="fragments/footer :: footer"></div>
+	</body>
+	
+</html>

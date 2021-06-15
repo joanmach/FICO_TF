@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title>Reserva</title>
+		
+		<script type="text/javascript"
+				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
+		</script>
+		
+		<link
+			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+			rel="stylesheet" id="bootstrap-css">
+		</link>
+		
+		<script
+			src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js">
+		</script>
+		
+		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+	</head>
+	
+	<body>
+		<div th:replace="fragments/headerC :: header"></div>
+		
+		<div class="container">
+			<form th:action="@{/reserva/registrar}" method="post" th:object="${reserva}">
+				<div class="form-group">
+					<label for="creserva">ID:</label>
+					<input type="text" class="form-control" th:field="*{CReserva}"></input>
+					<br>
+
+					
+						<label for="asesoria" class="col-sm-2 col-form-label">ASESORIA:</label>
+						<select class ="form-control" th:field="*{asesoria.CAsesoria}">
+						<option th:each ="ases:${listaAsesorias}" th:value= "${ases.CAsesoria}"
+						        th:text="${ases.NAsesoria}"
+						        th:selected= "(${ases.CAsesoria}== *{asesoria.CAsesoria})">
+						</option>
+						</select>
+						
+						<label for="cliente" class="col-sm-2 col-form-label">CLIENTE:</label>
+						<select class ="form-control" th:field="*{cliente.CCliente}">
+						<option th:each ="cl:${listaClientes}" th:value= "${cl.CCliente}"
+						        th:text="${cl.NNombre}"
+						        th:selected= "(${cl.CCliente}== *{cliente.CCliente})">
+						</option>
+						</select>
+						
+						<label for="horario" class="col-sm-2 col-form-label">INICIO DE ASESORIA:</label>
+						<select class ="form-control" th:field="*{horario.CHorario}">
+						<option th:each ="ho:${listaHorarios}" th:value= "${ho.CHorario}"
+						        th:text="${ho.FechaInicio}"
+						        th:selected= "(${ho.CHorario}== *{horario.CHorario})">
+						</option>
+						</select>
+						
+					
+						
+						
+					</div>
+				
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Aceptar</button>
+				<a href="/reserva/listar" class="btn btn-danger">Cancelar</a>
+				
+			</form>
+		</div>
+		
+		<div th:replace="fragments/footer :: footer"></div>
+	</body>
+	
+</html>

@@ -39,7 +39,7 @@
 										<td><label for="nombreAsesoria"
 											class="col-sm-2 col-form-label">Asesoria:</label></td>
 										<td><input type="text" class="form-control"
-											th:field="*{NAsesoria}" id="nombreEntidad"
+											th:field="*{NAsesoria}" id="nombreAsesoria"
 											placeholder="Nombre Asesoria" required="required"></input></td>
 										<td>
 										<button type="submit" class="btn btn-danger">Buscar
@@ -74,14 +74,14 @@
 							</thead>
 							
 							<tbody>
-								<tr th:each="ae: ${listaAsesorias}">
-									<td th:text="${ae.CAsesoria}"></td>
-									<td th:text="${ae.NAsesoria}"></td>
-									<td th:text="${ae.TDescripcion}"></td>
-									<td th:text="${ae.MPrecio}"></td>
-									<td th:text="${ae.asesor.Nnombre}"></td>
-									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/asesoria/eliminar?id=}+${ae.CAsesoria}"> Eliminar</a></td>
-									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/asesoria/modificar/' + ${ae.CAsesoria}}"> Modificar</a></td>
+								<tr th:each="ases: ${listaAsesorias}">
+									<td th:text="${ases.CAsesoria}"></td>
+									<td th:text="${ases.NAsesoria}"></td>
+									<td th:text="${ases.TDescripcion}"></td>
+									<td th:text="${ases.MPrecio}"></td>
+									<td th:text="${ases.asesor.Nnombre}"></td>
+									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/asesoria/eliminar?id=}+${ases.CAsesoria}"> Eliminar</a></td>
+									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/asesoria/modificar/' + ${ases.CAsesoria}}"> Modificar</a></td>
 								</tr>
 							</tbody>
 						</table>

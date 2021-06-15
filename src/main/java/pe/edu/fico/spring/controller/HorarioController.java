@@ -76,7 +76,7 @@ public class HorarioController {
 			model.put("mensaje", "Sucedio un error");
 			model.put("listaHorarios", hService.listar());
 		}
-		return "listEspecialidad";
+		return "listHorario";
 	}
 
 	@RequestMapping("/listar")
