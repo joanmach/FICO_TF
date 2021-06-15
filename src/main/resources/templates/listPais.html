@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Dueño</title>
+		<title>PAIS</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -22,40 +22,36 @@
 	</head>
 	
 	<body>
-		<div th:replace="fragments/header :: header"></div>
+		<div th:replace="fragments/headerC :: header"></div>
 		
 		<div class="container">
 			<form id="myform">
 				<div class="row clearfix">
 					<div class="col-md-12 column">
-						<a 	style="border-bottom-color: black" th:href="@{/dueno/irRegistrar}" id="add-row"
+						<a 	style="border-bottom-color: black" th:href="@{/pais/irRegistrar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
-							<span class="glyphicon glyphicon-plus"></span> Dueño
+							<span class="glyphicon glyphicon-plus"></span> Pais
 						</a>
 						
-						<a 	style="border-bottom-color: black" th:href="@{/dueno/irBuscar}" id="add-row"
-						   	type = "button"
-						   	class= "btn btn-primary btn-md left-block">
-							<span class="glyphicon glyphicon-search"></span> Buscar
-						</a>
+					
 						
 						<table class="table table-bordered table-hover table-striped" id="tab_logic">
 							<thead>
 								<tr>
 									<th class="text-center">CODIGO</th>
-									<th class="text-center">DUEÑO</th>
-									<th class="text-center">OPERACION</th>
-									<th class="text-center">OPERACION</th>
+									<th class="text-center">PAIS</th>
+									<th class="text-center">ELIMINAR</th>
+									<th class="text-center">MODIFICAR</th>
 								</tr>
 							</thead>
 							
 							<tbody>
-								<tr th:each="due: ${listaDuenos}">
-									<td th:text="${due.idDueno}"></td>
-									<td th:text="${due.nameDueno}"></td>
-									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/dueno/eliminar?id=}+${due.idDueno}"> Eliminar</a></td>
-									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/dueno/modificar/' + ${due.idDueno}}"> Modificar</a></td>
+								<tr th:each="pai: ${listaPaises}">
+									<td th:text="${pai.CPais}"></td>
+									<td th:text="${pai.NPais}"></td>
+									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/pais/eliminar?id=}+${pai.CPais}"> Eliminar</a></td>
+									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/pais/modificar/' + ${pai.CPais}}"> Modificar</a></td>
 								</tr>
 							</tbody>
 						</table>
