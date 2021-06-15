@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title>Asesoria</title>
+		
+		<script type="text/javascript"
+				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
+		</script>
+		
+		<link
+			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+			rel="stylesheet" id="bootstrap-css">
+		</link>
+		
+		<script
+			src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js">
+		</script>
+		
+		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+	</head>
+	
+	<body>
+		<div th:replace="fragments/headerA :: header"></div>
+		
+		<div class="container">
+			<form id="myform">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+					
+				        <form th:action="@{/asesoria/find}" method="post"
+						th:object="${asesoria}">
+
+						<div class="form-group">
+							<table>
+								<tbody>
+									<tr>
+										<td><label for="nombreAsesoria"
+											class="col-sm-2 col-form-label">Asesoria:</label></td>
+										<td><input type="text" class="form-control"
+											th:field="*{NAsesoria}" id="nombreEntidad"
+											placeholder="Nombre Asesoria" required="required"></input></td>
+										<td>
+										<button type="submit" class="btn btn-danger">Buscar
+												<i class="iconf fa fa-search" style="color: white;"></i>
+										</button>
+											</td>
+											
+										<td><a href="/asesoria/listar" class="btn btn-danger">Limpiar</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+
+						<a 	style="border-bottom-color: black" th:href="@{/asesoria/irRegistrar}" id="add-row"
+						   	type = "button"
+						   	class= "btn btn-primary btn-md left-block">
+							<span class="glyphicon glyphicon-plus"></span> Asesoria
+						</a>
+						
+						<table class="table table-bordered table-hover table-striped" id="tab_logic">
+							<thead>
+								<tr>
+									<th class="text-center">CODIGO</th>
+									<th class="text-center">NOMBRE</th>
+									<th class="text-center">DESCRIPCION</th>
+									<th class="text-center">PRECIO</th>
+									<th class="text-center">ASESOR</th>
+									<th class="text-center">OPERACION</th>
+									<th class="text-center">OPERACION</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								<tr th:each="ae: ${listaAsesorias}">
+									<td th:text="${ae.CAsesoria}"></td>
+									<td th:text="${ae.NAsesoria}"></td>
+									<td th:text="${ae.TDescripcion}"></td>
+									<td th:text="${ae.MPrecio}"></td>
+									<td th:text="${ae.asesor.Nnombre}"></td>
+									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/asesoria/eliminar?id=}+${ae.CAsesoria}"> Eliminar</a></td>
+									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/asesoria/modificar/' + ${ae.CAsesoria}}"> Modificar</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div th:if="${mensaje}" class="alert alert-danger">
+					<p th:text="${mensaje}"></p>
+				</div>
+			</form>
+		</div>
+		
+		<div th:replace="fragments/footer :: footer"></div>
+	</body>
+	
+</html>

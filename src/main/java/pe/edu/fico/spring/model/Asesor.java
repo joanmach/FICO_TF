@@ -70,57 +70,96 @@ public class Asesor {
 		return CAsesor;
 	}
 
+
+
 	public void setCAsesor(int cAsesor) {
 		CAsesor = cAsesor;
 	}
+
+
 
 	public String getNnombre() {
 		return Nnombre;
 	}
 
+
+
 	public void setNnombre(String nnombre) {
 		Nnombre = nnombre;
 	}
+
+
 
 	public String getNapellido() {
 		return Napellido;
 	}
 
+
+
 	public void setNapellido(String napellido) {
 		Napellido = napellido;
 	}
+
+
 
 	public int getNdni() {
 		return Ndni;
 	}
 
+
+
 	public void setNdni(int ndni) {
 		Ndni = ndni;
 	}
+
+
 
 	public String getTcorreo() {
 		return Tcorreo;
 	}
 
+
+
 	public void setTcorreo(String tcorreo) {
 		Tcorreo = tcorreo;
 	}
+
+
+
+	public String getNusuario() {
+		return Nusuario;
+	}
+
+
+
+	public void setNusuario(String nusuario) {
+		Nusuario = nusuario;
+	}
+
+
 
 	public String getTcontraseña() {
 		return Tcontraseña;
 	}
 
+
+
 	public void setTcontraseña(String tcontraseña) {
 		Tcontraseña = tcontraseña;
 	}
+
+
 
 	public Especialidad getEspecialidad() {
 		return especialidad;
 	}
 
+
+
 	public void setEspecialidad(Especialidad especialidad) {
 		this.especialidad = especialidad;
 	}
+	
 	
 	
 }
