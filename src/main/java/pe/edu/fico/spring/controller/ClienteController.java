@@ -44,6 +44,11 @@ public class ClienteController {
 		return "bienvenido";
 	}
 	
+	@RequestMapping("/landing")
+	public String irClienteLanding() {
+		return "Landing";
+	}
+	
 	@RequestMapping("/bienvenidoc")
 	public String irClienteBienvenidoc() {
 		return "bienvenidoC";

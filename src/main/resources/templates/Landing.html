@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Finance Companion</title>
+      <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+      <h2><a href="#">Finance Companion</a></h2>
+      <nav>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#rate">Tarifas</a></li>
+          <li><a href="#advisory">Asesorias</a></li>
+        <li><a href="#adviser">Nuestros expertos</a></li>
+        <li><a href="#contact">Contactanos</a></li>
+        <li><a href="#" class="btn">Inicia Sesión</a></li>
+      </nav>
+    </header>
+
+    <!--Full background image, headings, button-->
+    <section id=port class="port">
+        <div class="background-image" style="background-image: url(https://www.pronetwork.mx/magazine/wp-content/uploads/2019/03/Asesores-financieros.jpg)"> </div>
+        <h1>
+            TOMA EL CONTROL DE TU DINERO
+        </h1>
+        <h3>
+            Finance Companion fue diseñada para brindar a nuestros usuarios
+            asesoria financiera e impulsarlos a llegar a sus metas financieras
+        </h3>
+        <a href="#" class="btn">
+            PRUEBALO AHORA
+        </a>
+    </section>
+    <!--Full background image, headings, button-->
+
+    <!--Services-->
+    <section id=services class="services">
+        <img th:src="@{/imagenes/comparar.png}" alt="lens" width="200" height="200"/>
+        <h3 class="title"> Sigue la progresión de tus metas financieras</h3>
+        <p>
+            Gracias a nuestra web FICO (Finance Companion) podrás monitorear tus diferentes metas financieras. FICO te ofrece una herramienta que te permite seguir de cerca tus metas 
+            y brindarte información necesaria para completarla.
+        </p>
+        <a href="#" class="btn">
+            PRUEBALO GRATIS
+        </a>
+    </section>
+    <!--Services-->
+
+    <!--Rate-->
+    <section id="rate" class="rate">
+        <h3 class="title">
+            Tarifas
+        </h3>
+        <ul class="grid">
+            <li style="background-color: #206A5D">
+                <h4>BASICO</h4>
+                <h1>$0</h1>
+                <hr>
+                <p style="font:15px 'Roboto'">Acceso a diversa información</p>
+                <p style="font:15px 'Roboto'">Uso de la herramienta comparativa</p>
+                <p style="font:15px 'Roboto'">Acceso a los recursos educativos</p>
+            </li>
+            <li style="background-color: #1F4868">
+                <h4>STANDARD</h4>
+                <h1>$15</h1>
+                <hr>
+                <p style="font:15px 'Roboto'">Acceso a diversa información</p>
+                <p style="font:15px 'Roboto'">Uso de la herramienta comparativa</p>
+                <p style="font:15px 'Roboto'">Acceso a los recursos educativos</p>
+                <p style="font:15px 'Roboto'">Reserva y recepción de asesorias</p>
+            </li>
+            <li style="background-color: #206A5D">
+                <h4>PREMIUM</h4>
+                <h1>$25</h1>
+                <hr>
+                <p style="font:15px 'Roboto'">Acceso a diversa información</p>
+                <p style="font:15px 'Roboto'">Uso de la herramienta comparativa</p>
+                <p style="font:15px 'Roboto'">Acceso a los recursos educativos</p>
+                <p style="font:15px 'Roboto'">Reserva y recepción de asesorias</p>
+                <p style="font:15px 'Roboto'">Almacenamiento de información</p>
+            </li>
+        </ul>
+        <a href="#" class="btn">
+            CONOCE MÁS
+        </a>
+    </section>
+    <!--Rate-->
+
+    <!--advisory-->
+    <section id="advisory" class="advisory">
+        <h3 class="title">
+            Asesorias
+        </h3>
+        <ul class="grid">
+            <li>
+                <img th:src="@{/imagenes/candado.png}" alt="candado" width="150" height="150"/>
+                <h4>Seguridad</h4>
+                <p>Gracias a la gran cantidad de conexiones que FICO tiene, no quedara en duda su seguridad</p>
+            </li>
+            <li>
+                <img th:src="@{/imagenes/libros.png}" alt="libros" width="150" height="150"/>
+                <h4>Personal Capacitado</h4>
+                <p>FICO elige a los mejores especialistas; personal capacitado hará que usted pueda estar tranquilo</p>
+            </li>
+            <li>
+                <img th:src="@{/imagenes/despertador.png}" alt="despertador" width="150" height="150"/>
+                <h4>Asesorias 24/7</h4>
+                <p>Si tiene alguna duda o sugerencia, podrá hacer uso de las asesorias disponibles las 24 horas todos los días</p>
+            </li>
+        </ul>
+        <a href="#" class="btn">
+            EMPIECE AHORA
+        </a>
+    </section>
+    <!--advisory-->
+
+    <!--advisers-->
+    <section id="adviser" class="adviser">
+        <h3 class="title">
+            Nuestros expertos
+        </h3>
+        <ul class="grid">
+            <li>
+                <img th:src="@{/imagenes/asesor1.jpg}" alt="asesor1" width="280" height="200">
+                <h4>Juan Vargas</h4>
+                <p>Economista y especialista en finanzas</p>
+            </li>
+            <li>
+                <img th:src="@{/imagenes/asesor2.jpg}" alt="asesor2" width="280" height="200">
+                <h4>Ricardo Seminario</h4>
+                <p>Docente de contabilidad en la UNI</p>
+            </li>
+            <li>
+                <img th:src="@{/imagenes/asesor3.jpg}" alt="asesor3" width="280" height="200">
+                <h4> Carlos Valverde</h4>
+                <p>Docente de economía en la PUCP</p>
+            </li>
+        </ul>
+    </section>
+    <!--advisers-->
+
+    <!--contact-->
+    <section id=contact class="contact">
+            <h3 class="title" style="color: #ebecf1">
+                Contactanos
+            </h3>
+            <p>
+                Suscribete y recibe más información y excelentes descuentos, contenido extraordinario
+                de profesionales extraordinarios
+            </p>
+            <form>
+                <input type="email" placeholder="Email">
+                <a href="#" class="btn">Suscribete</a>
+            </form>
+            <p>
+                Acepto expresamente recibir correos y conoco que puedo dar de baja este servicio
+                facilmente
+            </p>
+    </section>
+    <!--contact-->
+
+    <!--footer-->
+    <footer>
+        <p>Copyright(C) 2020 <a href="https://acme.studio/" target="_blank">ACME.studio</a></p>
+        <ul>
+            <li><a href="https://twitter.com" target="_blank" ><img th:src="@{/imagenes/twitter.png}" alt="twitter" width="30" height="30"> </a></li>
+            <li><a href="https://facebook.com" target="_blank" ><img th:src="@{/imagenes/facebook.png}" alt="facebook" width="30" height="30"> </a></li>
+            <li><a href="https://instagram.com" target="_blank" ><img th:src="@{/imagenes/instagram.png}" alt="instagram" width="30" height="30"> </a></li>
+        </ul>
+    </footer>
+  </body>
+
+</html>
