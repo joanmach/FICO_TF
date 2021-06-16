@@ -24,8 +24,8 @@ public class DemoSecApplication implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args) throws Exception{
-		String password = "SECRETO";
-		String contra = "DIOSITO";
+		String password = "1234";
+		String contra = "ABCDE";
 		
 		for (int i=0; i<2; i++) {
 			String bcryptPassword = passwordEncoder.encode(password);
