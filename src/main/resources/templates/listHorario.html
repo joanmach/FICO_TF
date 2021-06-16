@@ -19,6 +19,8 @@
 		</script>
 		
 		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+		
+		<link rel="stylesheet" th:href="@{/css/styles.css}">
 	</head>
 	
 	<body>
@@ -41,8 +43,8 @@
 									<th class="text-center">CODIGO</th>
 									<th class="text-center">FEC.INICIO</th>
 									<th class="text-center">FEC.FIN</th>
-<!-- 									<th class="text-center">HORA.INICIO</th> -->
-<!-- 									<th class="text-center">HORA.FIN</th> -->
+ 									<th class="text-center">HORA.INICIO</th>
+									<th class="text-center">HORA.FIN</th>
 									<th class="text-center">ELIMINAR</th>
 									<th class="text-center">MODIFICAR</th>
 								</tr>
@@ -53,8 +55,8 @@
 									<td th:text="${ho.CHorario}"></td>
 									<td th:text="${#dates.format(ho.FechaInicio,'dd/MM/yyyy')}"></td>
 									<td th:text="${#dates.format(ho.FechaFin,'dd/MM/yyyy')}"></td>
-<!-- 									<td th:value="${#dates.format(ho.HoraInicio, 'HH:mm')}"></td> -->
-<!-- 									<td th:value="${#dates.format(ho.HoraFin, 'HH:mm')}"></td> -->
+									<td th:text="${#dates.format(ho.HoraInicio,'HH:mm')}"></td>
+									<td th:text="${#dates.format(ho.HoraFin,'HH:mm')}"></td> 
 									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/horario/eliminar?id=}+${ho.CHorario}"> Eliminar</a></td>
 									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/horario/modificar/' + ${ho.CHorario}}"> Modificar</a></td>
 								</tr>

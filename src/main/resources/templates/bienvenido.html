@@ -19,16 +19,41 @@
 		</script>
 		
 		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+		
+		    <link rel="stylesheet" th:href="@{/css/styles.css}">
+		 
 	</head>
 	
 	<body>
+
+ 
 		<div th:replace="fragments/header :: header"></div>
 		
-		<div class="container">
+
+		<div class="background-color" style="background-color:#688E23">
+		     		  
 			<form id="myform">
 				<div class="row clearfix">
+		
 					<div class="col-md-12 column" align="center">
-						<img th:src="@{/imagenes/Asesor.jpg}" width="600" height="600" alt="logo" align="middle"></img>
+						  
+        <section id=port class="port">	
+        
+     <h1 style="color:#000000">
+            TOMA EL CONTROL DE TU DINERO
+        </h1>
+        <h3 style="color:#000000">
+            Finance Companion fue diseñada para brindar a nuestros usuarios
+            asesoria financiera e impulsarlos a llegar a sus metas financieras
+        </h3>
+        <a th:href="@{/cliente/landing}" class="btn">
+            PRUEBALO AHORA
+        </a>
+     
+    </section> 
+       
+     
+   
 					</div>
 				</div>
 			</form>
