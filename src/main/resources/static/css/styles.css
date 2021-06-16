@@ -388,6 +388,16 @@ header nav li a.btn{
 }
 /* /.Section contact */
 
+/* /.Video*/
+#videoFC{
+	width:100%;     
+    height: auto;
+	position:fixed;
+   	z-index: -1;
+}
+/* /.Video*/
+
+
 /*Footer*/
 footer{
     flex-direction: row;
