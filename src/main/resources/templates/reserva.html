@@ -39,7 +39,7 @@
 						        th:selected= "(${ases.CAsesoria}== *{asesoria.CAsesoria})">
 						</option>
 						</select>
-						
+						<br>
 						<label for="cliente" class="col-sm-2 col-form-label">CLIENTE:</label>
 						<select class ="form-control" th:field="*{cliente.CCliente}">
 						<option th:each ="cl:${listaClientes}" th:value= "${cl.CCliente}"
@@ -47,11 +47,11 @@
 						        th:selected= "(${cl.CCliente}== *{cliente.CCliente})">
 						</option>
 						</select>
-						
+						<br>
 						<label for="horario" class="col-sm-2 col-form-label">INICIO DE ASESORIA:</label>
 						<select class ="form-control" th:field="*{horario.CHorario}">
 						<option th:each ="ho:${listaHorarios}" th:value= "${ho.CHorario}"
-						        th:text="${ho.FechaInicio}"
+						        th:texts="${ho.FechaInicio}" 
 						        th:selected= "(${ho.CHorario}== *{horario.CHorario})">
 						</option>
 						</select>
