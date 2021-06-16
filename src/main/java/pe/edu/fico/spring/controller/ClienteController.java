@@ -39,15 +39,15 @@ public class ClienteController {
 		return "listCliente";
 	}
 	
-	@RequestMapping("/bienvenido")
+	/*@RequestMapping("/bienvenido")
 	public String irClienteBienvenido() {
 		return "bienvenido";
 	}
 	
-	@RequestMapping("/landing")
+    @RequestMapping("/landing")
 	public String irClienteLanding() {
 		return "Landing";
-	}
+	}*/
 	
 	@RequestMapping("/bienvenidoc")
 	public String irClienteBienvenidoc() {

@@ -11,4 +11,14 @@ public class WelcomeController {
 	public String irPaginaBienvenida() {
 		return "Landing";
 	}
+	
+	@RequestMapping("/ingreso")
+	public String irPanelControl() {
+		return "bienvenido";
+	}
+	
+	@RequestMapping("/bienvenidoAdmin")
+	public String irAdministradorBienvenidoAdmin() {
+		return "bienvenidoAdmin";
+	}
 }

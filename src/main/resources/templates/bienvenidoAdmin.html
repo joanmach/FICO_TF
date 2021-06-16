@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title>FICO</title>
+		
+		<script type="text/javascript"
+				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
+		</script>
+		
+		<link
+			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+			rel="stylesheet" id="bootstrap-css">
+		</link>
+		
+		<script
+			src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js">
+		</script>
+		
+		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+			<link rel="stylesheet" th:href="@{/css/styles.css}">
+	</head>
+	
+	<body>
+		<div th:replace="fragments/headerAdmin :: header"></div>
+		
+    <section id=port class="port">	
+     <h1 style="background-color:#000000">
+            BIENVENIDO CREADOR
+        </h1>
+        <h3 style="background-color:#000000">
+            Eliga entre TODAS las opciones
+        </h3>
+     
+        <video id="videoFC2" autoplay muted loop>
+   			 <source th:src="@{/videos/video2.mp4}" >
+		</video>
+     
+    </section> 
+       
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<div th:replace="fragments/footer :: footer"></div>
+	</body>
+	
+</html>

@@ -388,14 +388,21 @@ header nav li a.btn{
 }
 /* /.Section contact */
 
-/* /.Video*/
+/* /.Videos*/
 #videoFC{
 	width:100%;     
     height: auto;
 	position:fixed;
    	z-index: -1;
 }
-/* /.Video*/
+
+#videoFC2{
+	width:100%;     
+    height: auto;
+	position:fixed;
+   	z-index: -1;
+}
+/* /.Videos*/
 
 
 /*Footer*/
