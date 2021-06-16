@@ -2,18 +2,14 @@ package pe.edu.fico.spring.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -58,12 +54,6 @@ public class Cliente implements Serializable{
 	@JoinColumn(name = "CCiudad", nullable = false)
 	private Ciudad ciudad;
 
-	private Boolean enabled;
-	
-	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name="usear_id")
-	private List<Role> roles;
-	
 	public Cliente() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -153,22 +143,6 @@ public class Cliente implements Serializable{
 
 	public void setCCliente(int cCliente) {
 		CCliente = cCliente;
-	}
-
-	public List<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
-	}
-
-	public Boolean getEnabled() {
-		return enabled;
-	}
-
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
 	}
 
 	

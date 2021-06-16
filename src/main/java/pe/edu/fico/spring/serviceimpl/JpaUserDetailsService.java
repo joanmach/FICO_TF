@@ -14,46 +14,27 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import pe.edu.fico.spring.model.Role;
-import pe.edu.fico.spring.model.Cliente;
-import pe.edu.fico.spring.repository.IAsesorRepository;
-import pe.edu.fico.spring.repository.IClienteRepository;
-import pe.edu.fico.spring.model.Asesor;
-
+import pe.edu.fico.spring.model.Users;
+import pe.edu.fico.spring.repository.iUsuarioRepository;
 
 @Service
 public class JpaUserDetailsService implements UserDetailsService{
 
 	@Autowired
-	private IClienteRepository clienteRepository;
-	
-	@Autowired
-	private IAsesorRepository asesorRepository;
+	private iUsuarioRepository usuarioRepository;
 	
 	@Override
 	@Transactional(readOnly = true)
-	public UserDetails loadUserByUsername(String TCorreo) throws UsernameNotFoundException {
-		Cliente cliente = clienteRepository.findByCorreo(TCorreo);
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		Users usuario = usuarioRepository.findByUsername(username);
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		
-		for(Role role: cliente.getRoles()) {
+		for(Role role: usuario.getRoles()) {
 			authorities.add(new SimpleGrantedAuthority(role.getAuthority()));
 		}
 		
-		return new User(cliente.getTCorreo(), cliente.getTContraseña(), cliente.getEnabled(), true, true, true, authorities);
+		return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true, authorities);
 	}
-	
-//	@Override
-//	@Transactional(readOnly = true)
-//	public UserDetails loadUserByUsername(String correo) throws UsernameNotFoundException {
-//		Asesor asesor = asesorRepository.findByCorreo(correo);
-//		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-//		
-//		for(Role role: usuario.getRoles()) {
-//			authorities.add(new SimpleGrantedAuthority(role.getAuthority()));
-//		}
-//		
-//		return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true, authorities);
-//	}
 	
 	
 }

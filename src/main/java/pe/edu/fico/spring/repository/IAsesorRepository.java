@@ -11,7 +11,6 @@ import pe.edu.fico.spring.model.Asesor;
 
 @Repository
 public interface IAsesorRepository extends JpaRepository<Asesor,Integer>{
-	public Asesor findByCorreo(String TCorreo);
 	@Query("from Asesor a where a.Nnombre like %:Nnombre%")
 	List<Asesor> findByNnombre(@Param("Nnombre") String Nnombre);
 	
