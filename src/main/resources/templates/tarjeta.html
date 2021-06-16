@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title>Tarjeta</title>
+		
+		<script type="text/javascript"
+				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
+		</script>
+		
+		<link
+			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+			rel="stylesheet" id="bootstrap-css">
+		</link>
+		
+		<script
+			src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js">
+		</script>
+		
+		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+	</head>
+	
+	<body>
+		<div th:replace="fragments/headerC :: header"></div>
+		
+		<div class="container">
+			<form th:action="@{/tarjeta/registrar}" method="post" th:object="${tarjeta}">
+				<div class="form-group">
+					<label for="ctarjeta">ID:</label>
+					<input type="text" class="form-control" th:field="*{CTarjeta}"></input>
+					<br>
+					<div class="form-group">
+						<label for="numTarjeta">NUMERO DE TARJETA:</label>
+						<input type="text" class="form-control" th:field="*{numTarjeta}" id="numtarjeta" maxlength="16"></input>
+					<div class="alert alert-danger" th:if="${#fields.hasErrors('numTarjeta')}" 
+							th:errors="*{numTarjeta}">						
+						</div>
+					
+					
+						<label for="entidad" class="col-sm-2 col-form-label">ENTIDAD BANCARIA:</label>
+						<select class ="form-control" th:field="*{entidad.CEntidad}">
+						<option th:each ="ent:${listaEntidades}" th:value= "${ent.CEntidad}"
+						        th:text="${ent.NEntidad}"
+						        th:selected= "(${ent.CEntidad}== *{entidad.CEntidad})">
+						</option>
+						</select>
+						
+						<label for="ttarjeta" class="col-sm-2 col-form-label">TIPO DE TARJETA:</label>
+						<select class ="form-control" th:field="*{ttarjeta.CTTarjeta}">
+						<option th:each ="tta:${listaTTarjetas}" th:value= "${tta.CTTarjeta}"
+						        th:text="${tta.NTTarjeta}"
+						        th:selected= "(${tta.CTTarjeta}== *{ttarjeta.CTTarjeta})">
+						</option>
+						</select>
+						
+						<label for="cliente" class="col-sm-2 col-form-label">DNI DEL CLIENTE:</label>
+						<select class ="form-control" th:field="*{cliente.CCliente}">
+						<option th:each ="cli:${listaClientes}" th:value= "${cli.CCliente}"
+						        th:text="${cli.NDNI}"
+						        th:selected= "(${cli.CCliente}== *{cliente.CCliente})">
+						</option>
+						</select>
+						
+						
+					</div>
+				
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Aceptar</button>
+				<a href="/tarjeta/listar" class="btn btn-danger">Cancelar</a>
+				
+			</form>
+		</div>
+		
+		<div th:replace="fragments/footer :: footer"></div>
+	</body>
+	
+</html>

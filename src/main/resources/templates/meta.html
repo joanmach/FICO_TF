@@ -31,7 +31,7 @@
 					<input type="text" class="form-control" th:field="*{CMeta}"></input>
 					<br>
 					<div class="form-group">
-						<label for="nombre">META:</label>
+						<label for="nombre">META FINANCIERA:</label>
 						<input type="text" class="form-control" th:field="*{NMeta}" id="nombre"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('NMeta')}" 
@@ -39,7 +39,7 @@
 						</div>
 						
 						<div class="form-group">
-						<label for="descripcion">DESCRIPCIÓN:</label>
+						<label for="descripcion">DESCRIPCIÓN DE META FINANCIERA:</label>
 						<input type="text" class="form-control" th:field="*{TDescripcion}" id="descripcion" maxlength="50"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('TDescripcion')}" 
@@ -60,7 +60,7 @@
 							th:errors="*{FechaFin}">						
 						</div>
 						
-						<label for="cliente" class="col-sm-2 col-form-label">CLIENTE:</label>
+						<label for="cliente" class="col-sm-2 col-form-label">NOMBRE DEL CLIENTE:</label>
 						<select class ="form-control" th:field="*{cliente.CCliente}">
 						<option th:each ="cl:${listaClientes}" th:value="${cl.CCliente}"
 						        th:text="${cl.NNombre}"

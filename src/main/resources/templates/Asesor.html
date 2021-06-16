@@ -37,14 +37,14 @@
 							th:errors="*{Ndni}">						
 						</div>
 					<div class="form-group">
-						<label for="nombre">NOMBRE:</label>
+						<label for="nombre">NOMBRE DEL ASESOR:</label>
 						<input type="text" class="form-control" th:field="*{Nnombre}" id="nombre"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('Nnombre')}" 
 							th:errors="*{Nnombre}">						
 						</div>
 					<div class="form-group">
-						<label for="apellido">APELLIDO:</label>
+						<label for="apellido">APELLIDO DEL ASESOR:</label>
 						<input type="text" class="form-control" th:field="*{Napellido}" id="apellido"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('Napellido')}" 
@@ -52,7 +52,7 @@
 						</div>
 						
 						<div class="form-group">
-						<label for="correo">CORREO:</label>
+						<label for="correo">CORREO ELECTRONICO:</label>
 						<input type="email" class="form-control" th:field="*{Tcorreo}" id="correo"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('Tcorreo')}" 
@@ -60,7 +60,7 @@
 						</div>
 						
 						<div class="form-group">	
-						<label for="usuario">USUARIO:</label>
+						<label for="usuario">USUARIO DEL ASESOR:</label>
 						<input type="text" class="form-control" th:field="*{Nusuario}" id="usuario"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('Nusuario')}" 
@@ -68,7 +68,7 @@
 						</div>
 						
 						<div class="form-group">
-						<label for="contraseña">CONTRASEÑA:</label>
+						<label for="contraseña">CONTRASEÑA DEL ASESOR:</label>
 						<input type="text" class="form-control" th:field="*{Tcontraseña}" id="contraseña"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('Tcontraseña')}" 
@@ -76,7 +76,7 @@
 						</div>
 						
 					
-						<label for="especialidad" class="col-sm-2 col-form-label">Especialidad:</label>
+						<label for="especialidad" class="col-sm-2 col-form-label">ESPECIALIDAD:</label>
 						<select class ="form-control" th:field="*{especialidad.CEspecialidad}">
 						<option th:each ="esp:${listaEspecialidades}" th:value= "${esp.CEspecialidad}"
 						        th:text="${esp.NEspecialidad}"

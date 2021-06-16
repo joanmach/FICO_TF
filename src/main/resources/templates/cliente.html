@@ -37,14 +37,14 @@
 							th:errors="*{NDNI}">						
 						</div>
 					<div class="form-group">
-						<label for="nombre">NOMBRE:</label>
+						<label for="nombre">NOMBRE DEL CLIENTE:</label>
 						<input type="text" class="form-control" th:field="*{NNombre}" id="nombre"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('NNombre')}" 
 							th:errors="*{NNombre}">						
 						</div>
 					<div class="form-group">
-						<label for="apellido">APELLIDO:</label>
+						<label for="apellido">APELLIDO DEL CLIENTE:</label>
 						<input type="text" class="form-control" th:field="*{NApellido}" id="apellido"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('NApellido')}" 
@@ -52,7 +52,7 @@
 						</div>
 						
 						<div class="form-group">
-						<label for="correo">CORREO:</label>
+						<label for="correo">CORREO ELECTRONICO:</label>
 						<input type="email" class="form-control" th:field="*{TCorreo}" id="correo"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('TCorreo')}" 
