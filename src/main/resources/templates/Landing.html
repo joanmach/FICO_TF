@@ -16,7 +16,7 @@
           <li><a href="#advisory">Asesorias</a></li>
         <li><a href="#adviser">Nuestros expertos</a></li>
         <li><a href="#contact">Contactanos</a></li>
-        <li><a href="#" class="btn">Inicia Sesión</a></li>
+        <li><a th:href="@{/welcome/ingreso}" class="btn">Inicia Sesión</a></li>
       </nav>
     </header>
 
@@ -41,7 +41,7 @@
             Gracias a nuestra web Finance Companion podrás monitorear tus diferentes metas financieras. FICO te ofrece una herramienta que te permite seguir de cerca tus metas 
             y brindarte información necesaria para completarla.
         </p>
-        <a href="#" class="btn">
+        <a th:href="@{/welcome/ingreso}" class="btn">
             PRUEBALO GRATIS
         </a>
     </section>
@@ -55,25 +55,25 @@
                 <h4>BASICO</h4>
                 <h1>$0</h1>
                 <hr>
-                <p style="font:15px 'Roboto'">Acceso a diversa información</p>
+                <p style="font:15px 'Roboto'">✓ Acceso a diversa información</p>
             </li>
             <li style="background-color: #1F4868">
                 <h4>STANDARD</h4>
                 <h1>$15</h1>
                 <hr>
-                <p style="font:15px 'Roboto'">Acceso a diversa información</p>
-                <p style="font:15px 'Roboto'">Reserva y recepción de asesorias</p>
+                <p style="font:15px 'Roboto'">✓ Acceso a diversa información</p>
+                <p style="font:15px 'Roboto'">✓ Reserva y recepción de asesorias</p>
             </li>
             <li style="background-color: #206A5D">
                 <h4>PREMIUM</h4>
                 <h1>$25</h1>
                 <hr>
-                <p style="font:15px 'Roboto'">Acceso a diversa información</p>
-                <p style="font:15px 'Roboto'">Acceso a los recursos educativos</p>
-                <p style="font:15px 'Roboto'">Reserva y recepción de asesorias</p>
+                <p style="font:15px 'Roboto'">✓ Acceso a diversa información</p>
+                <p style="font:15px 'Roboto'">✓ Acceso a los recursos educativos</p>
+                <p style="font:15px 'Roboto'">✓ Reserva y recepción de asesorias</p>
             </li>
         </ul>
-        <a href="#" class="btn">
+        <a th:href="@{/welcome/ingreso}" class="btn">
             CONOCE MÁS
         </a>
     </section>
@@ -99,30 +99,30 @@
                 <p>Si tiene alguna duda o sugerencia, podrá hacer uso de las asesorias disponibles las 24 horas todos los días</p>
             </li>
         </ul>
-        <a href="#" class="btn">
+        <a th:href="@{/welcome/ingreso}" class="btn">
             EMPIECE AHORA
         </a>
     </section>
 
     <section id="adviser" class="adviser">
         <h3 class="title">
-            Nuestros expertos
+            Testimonios
         </h3>
         <ul class="grid">
             <li>
-                <img th:src="@{/imagenes/asesor1.jpg}" alt="asesor1" width="280" height="200">
-                <h4>Juan Vargas</h4>
-                <p>Economista y especialista en finanzas</p>
+                <img th:src="@{/imagenes/testimonio1.jpg}" alt="testimonio1" width="280" height="200">
+                <h4>Alfredo Salas</h4>
+                <p>"Perfecta para emprendedores y empresarios"</p>
             </li>
             <li>
-                <img th:src="@{/imagenes/asesor2.jpg}" alt="asesor2" width="280" height="200">
-                <h4>Ricardo Seminario</h4>
-                <p>Docente de contabilidad en la UNI</p>
+                <img th:src="@{/imagenes/testimonio2.png}" alt="testimonio2" width="280" height="200">
+                <h4>Micaela Flores</h4>
+                <p>"Encontre esta web en el momento perfecto "</p>
             </li>
             <li>
-                <img th:src="@{/imagenes/asesor3.jpg}" alt="asesor3" width="280" height="200">
-                <h4> Carlos Valverde</h4>
-                <p>Docente de economía en la PUCP</p>
+                <img th:src="@{/imagenes/testimonio3.jpg}" alt="testimonio3" width="280" height="200">
+                <h4> Gerardo Montes</h4>
+                <p>"Fico es tu mejor opcion para iniciar en el mundo de las finanzas"</p>
             </li>
         </ul>
     </section>
@@ -146,7 +146,7 @@
     </section>
 
     <footer>
-        <p>Copyright(C) 1520 <a >(ಠ_ಠ) (ಠ_ಠ) (ಠ_ಠ)</a></p>
+        <p>Copyright© 1520 <a >  (ಠ_ಠ) (ಠ_ಠ) (ಠ_ಠ)</a></p>
         <ul>
             <li><a href="https://twitter.com" target="_blank" ><img th:src="@{/imagenes/twitter.png}" alt="twitter" width="30" height="30"> </a></li>
             <li><a href="https://facebook.com" target="_blank" ><img th:src="@{/imagenes/facebook.png}" alt="facebook" width="30" height="30"> </a></li>

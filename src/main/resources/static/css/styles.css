@@ -196,8 +196,25 @@ header nav li a.btn{
         padding:15px 40px;
     }
 }
+
+.port form{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+}
 /* /.Section port*/
 
+/* /.Section login*/
+.login {
+	box-shadow: 6px 20px 10px grey;
+	float: right;
+	margin-top: 100px;
+	margin-bottom: 1px;
+  	margin-left: 500px;
+  	margin-right: 50px;
+}
+/* /.Section login*/
 
 /* /.Section rate*/
 .rate .grid li{
