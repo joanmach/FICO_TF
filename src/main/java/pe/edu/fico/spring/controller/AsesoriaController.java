@@ -103,7 +103,12 @@ public class AsesoriaController {
 		model.put("listaAsesorias", tService.listar());
 		return "listAsesoria";
 	}
-
+	@RequestMapping("/listarc")
+	public String listarC(Map<String, Object> model) {
+		model.put("listaAsesorias", tService.listar());
+		return "listAsesoriaC";
+	}
+	
 	@RequestMapping("/listarId")
 	public String listar(Map<String, Object> model, @ModelAttribute Asesoria asesoria) throws ParseException {
 		tService.listarId(asesoria.getCAsesoria());
