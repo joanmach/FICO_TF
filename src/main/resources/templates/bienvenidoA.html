@@ -19,22 +19,23 @@
 		</script>
 		
 		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" th:href="@{/css/styles.css}">
 	</head>
 	
-	<body>
+	<body style="background-color:#B6E5E4;">
 		<div th:replace="fragments/headerA :: header"></div>
 		
-		<div class="container">
-			<form id="myform">
-				<div class="row clearfix">
-					<div class="col-md-12 column" align="center">
-						<img th:src="@{/imagenes/Asesor.jpg}" width="600" height="600" alt="logo" align="middle"></img>
+					<div class="form-group col-sm-6">
+						<img th:src="@{/imagenes/asesor.png}" width="450" height="450" align="right"></img>
 					</div>
-				</div>
-			</form>
-		</div>
-		
-		<div th:replace="fragments/footer :: footer"></div>
+					<div class="form-group col-sm-6">
+					<section id=saludo class="saludo" style="background-color:#FFFFFF">
+						<h1 style="font-family:Courier New; text-align:center"> BIENVENIDO ASESOR </h1>
+						</section>
+					</div>
+					
+		<!--  <div th:replace="fragments/footer :: footer"></div>-->
 	</body>
+	
 	
 </html>
