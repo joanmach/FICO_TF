@@ -21,11 +21,16 @@ public class HorarioServiceImpl implements IHorarioService{
 	@Transactional
 	public boolean insertar(Horario horario) {
 		
+		if(horario.getFechaInicio().before(horario.getFechaFin())) {
 		Horario objHorario = dHorario.save(horario);
 		if(objHorario == null)
 			return false;
 		else
 			return true;
+		}
+		else
+			System.out.println("Invalid Date");
+			return false;
 	}
 
 	@Override
