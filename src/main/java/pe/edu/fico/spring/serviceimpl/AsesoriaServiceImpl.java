@@ -20,11 +20,16 @@ public class AsesoriaServiceImpl implements IAsesoriaService{
 	@Override
 	@Transactional
 	public boolean insertar(Asesoria asesoria) {
+		if(asesoria.getMPrecio()>0) {
 		Asesoria objAsesoria = dAsesoria.save(asesoria);
 		if(objAsesoria == null)
 			return false;
 		else
 			return true;
+		}
+		else
+			System.out.println("Invalid Value");
+			return false;
 	}
 
 	@Override

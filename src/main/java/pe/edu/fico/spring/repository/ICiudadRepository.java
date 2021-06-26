@@ -15,5 +15,5 @@ public interface ICiudadRepository extends JpaRepository<Ciudad, Integer> {
 	List<Ciudad> buscarCiudad(@Param("NCiudad") String NCiudad);
 	
 	@Query("from Ciudad c where c.pais.NPais like %:NPais%")
-	List<Ciudad> buscarPais(@Param("NPais") String nameRace);
+	List<Ciudad> buscarPais(@Param("NPais") String NPais);
 }

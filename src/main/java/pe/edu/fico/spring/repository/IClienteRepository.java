@@ -10,4 +10,5 @@ import pe.edu.fico.spring.model.Cliente;
 public interface IClienteRepository extends JpaRepository<Cliente,Integer>{
 	
 	List<Cliente> findByNNombre(String NNombre);
+
 }

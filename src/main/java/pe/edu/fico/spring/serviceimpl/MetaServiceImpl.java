@@ -20,12 +20,16 @@ public class MetaServiceImpl implements IMetaService{
 	@Override
 	@Transactional
 	public boolean insertar(Meta meta) {
-		// TODO Auto-generated method stub
+		if(meta.getFechaInicio().before(meta.getFechaFin())) {
 		Meta objMeta = dMeta.save(meta);
 		if(objMeta == null)
 			return false;
 		else
 			return true;
+		}
+		else
+			System.out.println("Invalid Date");
+			return false;
 	}
 
 	@Override

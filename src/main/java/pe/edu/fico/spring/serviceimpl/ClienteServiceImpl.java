@@ -20,11 +20,16 @@ public class ClienteServiceImpl implements IClienteService{
 	@Override
 	@Transactional
 	public boolean insertar(Cliente cliente) {
+		if(cliente.getNDNI()>9999999) {
 		Cliente objCliente = dCliente.save(cliente);
 		if(objCliente == null)
 			return false;
 		else
 			return true;
+		}
+		else
+			System.out.println("Invalid Value");
+			return false;
 	}
 
 	@Override
