@@ -3,9 +3,12 @@ package pe.edu.fico.spring.serviceimpl;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 
 import pe.edu.fico.spring.model.Cliente;
 import pe.edu.fico.spring.repository.IClienteRepository;
@@ -14,18 +17,22 @@ import pe.edu.fico.spring.service.IClienteService;
 @Service
 public class ClienteServiceImpl implements IClienteService{
 	
+	public EntityManager em;
+	
 	@Autowired
 	private IClienteRepository dCliente;
-
+		
 	@Override
 	@Transactional
 	public boolean insertar(Cliente cliente) {
 		if(cliente.getNDNI()>9999999) {
+			if(dCliente.buscarDNI(cliente.getNDNI())==0) {
 		Cliente objCliente = dCliente.save(cliente);
 		if(objCliente == null)
 			return false;
 		else
 			return true;
+			}
 		}
 		else
 			System.out.println("Invalid Value");
