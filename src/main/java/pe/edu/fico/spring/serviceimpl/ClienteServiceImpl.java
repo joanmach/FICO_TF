@@ -26,12 +26,11 @@ public class ClienteServiceImpl implements IClienteService{
 	@Transactional
 	public boolean insertar(Cliente cliente) {
 		
-			
 		Cliente objCliente = dCliente.save(cliente);
-		if(objCliente == null)
-			return false;
-		else
+		if(objCliente != null)
 			return true;
+		else
+			return false;
 			
 	
 	}
@@ -50,7 +49,6 @@ public class ClienteServiceImpl implements IClienteService{
 	}
 
 	@Override
-	@Transactional
 	public void eliminar(int CCliente) {
 		dCliente.deleteById(CCliente);
 	}
