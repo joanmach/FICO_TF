@@ -20,13 +20,17 @@ public class HorarioServiceImpl implements IHorarioService{
 	@Override
 	@Transactional
 	public boolean insertar(Horario horario) {
-		
+		if(dHorario.duplicidadHorario(horario.getFechaInicio(), horario.getFechaFin(), horario.getHoraInicio(), horario.getHoraFin())==0) {
 		if(horario.getFechaInicio().before(horario.getFechaFin())) {
 		Horario objHorario = dHorario.save(horario);
 		if(objHorario == null)
 			return false;
 		else
 			return true;
+		}
+		else 
+			System.out.println("Invalid Date");
+			return false;
 		}
 		else
 			System.out.println("Invalid Date");
