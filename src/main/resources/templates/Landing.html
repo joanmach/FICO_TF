@@ -16,7 +16,7 @@
           <li><a href="#advisory">Asesorias</a></li>
         <li><a href="#adviser">Testimonios</a></li>
         <li><a href="#contact">Contactanos</a></li>
-        <li><a th:href="@{/welcome/ingreso}" class="btn">Inicia Sesión</a></li>
+        <li><a th:href="@{/login}" class="btn">Inicia Sesión</a></li>
       </nav>
     </header>
 
@@ -29,8 +29,15 @@
             Finance Companion fue diseñada para brindar a nuestros usuarios
             asesoria financiera e impulsarlos a lograr sus metas financieras
         </h3>
-        <a th:href="@{/welcome/ingreso}" class="btn">
-            PRUEBALO AHORA
+        <h4>
+           Una vez iniciada tu Sesión presiona el botón de su tipo de cuenta
+        </h4>
+        <a th:href="@{/cliente/bienvenidoc}" class="btn">
+            ENTRE COMO CLIENTE
+        </a> 
+        <a><b>*</b></a>
+        <a th:href="@{/asesor/bienvenidoa}" class="btn">
+            ENTRE COMO ASESOR
         </a>
     </section>
 
