@@ -227,6 +227,17 @@ header nav li a.btn{
 }
 /* /.Section login*/
 
+/* /.Section containers*/
+.formulario {
+	box-shadow: 10px 10px 9px grey inset;
+	float: right;
+	margin-top: 40px;
+	margin-bottom: 100px;
+  	margin-left: 80px;
+  	margin-right: 80px;
+}
+/* /.Section containers*/
+
 /* /.Section rate*/
 .rate .grid li{
     padding: 50px 0px;
@@ -466,4 +477,8 @@ footer p a{
     footer{
         padding: 10px 0px;
     }
+}
+
+.navbar-inverse{
+	border-color: #206A5D;
 }

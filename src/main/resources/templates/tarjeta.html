@@ -24,7 +24,7 @@
 	
 	<body style="background-color:#B6E5E4">
 		<div th:replace="fragments/headerC :: header"></div>
-		
+		<section id=formulario class="formulario" style="background-color:#fff">
 		<div class="container">
 			<form th:action="@{/tarjeta/registrar}" method="post" th:object="${tarjeta}">
 				<div class="form-group">
@@ -73,7 +73,7 @@
 				
 			</form>
 		</div>
-		
+		</section>
 	</body>
 	
 </html>
