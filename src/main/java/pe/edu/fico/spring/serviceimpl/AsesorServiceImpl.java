@@ -20,17 +20,15 @@ public class AsesorServiceImpl implements IAsesorService{
 	@Override
 	@Transactional
 	public boolean insertar(Asesor asesor) {
-		if(asesor.getNdni()>9999999) {
+		if(dAsesor.buscarDNI(asesor.getNdni())==0) {
 		Asesor objAsesor = dAsesor.save(asesor);
 		if(objAsesor == null)
 			return false;
 		else
 			return true;
-		}
 		else
 			System.out.println("Invalid Value");
 			return false;
-
 	}
 
 	@Override

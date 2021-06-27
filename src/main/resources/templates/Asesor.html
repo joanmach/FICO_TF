@@ -33,7 +33,7 @@
 					<br>
 					<div class="form-group">
 						<label for="dni">DNI:</label>
-						<input type="text" class="form-control" th:field="*{Ndni}" id="dni" maxlength="8"></input>
+						<input type="text" class="form-control" th:field="*{Ndni}" id="dni" maxlength="8" pattern="[0-9]{8}" title="Debe poner 8 números"></input>
 					<div class="alert alert-danger" th:if="${#fields.hasErrors('Ndni')}" 
 							th:errors="*{Ndni}">						
 						</div>

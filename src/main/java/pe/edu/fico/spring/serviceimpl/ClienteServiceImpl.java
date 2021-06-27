@@ -25,13 +25,16 @@ public class ClienteServiceImpl implements IClienteService{
 	@Override
 	@Transactional
 	public boolean insertar(Cliente cliente) {
-		
+		if(dCliente.buscarDNI(cliente.getNDNI())==0) {
 		Cliente objCliente = dCliente.save(cliente);
 		if(objCliente != null)
 			return true;
 		else
 			return false;
-			
+		}
+		else
+			System.out.println("Invalid Value");
+			return false;
 	
 	}
 
