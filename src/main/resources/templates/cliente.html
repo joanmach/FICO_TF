@@ -33,20 +33,20 @@
 					<br>
 					<div class="form-group">
 						<label for="dni">DNI:</label>
-						<input type="text" class="form-control" th:field="*{NDNI}" id="dni" maxlength="8" pattern="[0-9]{8}" title="Debe poner 8 números"></input>
+						<input type="text" class="form-control" th:field="*{NDNI}" id="dni" maxlength="8" pattern="[0-9]{8}" title="Debe poner 8 números" required></input>
 					<div class="alert alert-danger" th:if="${#fields.hasErrors('NDNI')}" 
 							th:errors="*{NDNI}">						
 						</div>
 					<div class="form-group">
 						<label for="nombre">NOMBRE DEL CLIENTE:</label>
-						<input type="text" class="form-control" th:field="*{NNombre}" id="nombre"></input>
+						<input type="text" class="form-control" th:field="*{NNombre}" id="nombre" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('NNombre')}" 
 							th:errors="*{NNombre}">						
 						</div>
 					<div class="form-group">
 						<label for="apellido">APELLIDO DEL CLIENTE:</label>
-						<input type="text" class="form-control" th:field="*{NApellido}" id="apellido"></input>
+						<input type="text" class="form-control" th:field="*{NApellido}" id="apellido" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('NApellido')}" 
 							th:errors="*{NApellido}">						
@@ -54,14 +54,14 @@
 						
 						<div class="form-group">
 						<label for="correo">CORREO ELECTRONICO:</label>
-						<input type="email" class="form-control" th:field="*{TCorreo}" id="correo"></input>
+						<input type="email" class="form-control" th:field="*{TCorreo}" id="correo" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('TCorreo')}" 
 							th:errors="*{TCorreo}">						
 						</div>
 						
 						<label for="fechadeNacimiento">FECHA DE NACIMIENTO:</label>
-						<input type="date" class="form-control" th:field="*{FNacimiento}" id="fechadeNacimiento"></input>
+						<input type="date" class="form-control" th:field="*{FNacimiento}" id="fechadeNacimiento" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('FNacimiento')}" 
 							th:errors="*{FNacimiento}">						
@@ -69,7 +69,7 @@
 							<div class="form-group">
 							
 						<label for="usuario">USUARIO:</label>
-						<input type="text" class="form-control" th:field="*{NUsuario}" id="usuario"></input>
+						<input type="text" class="form-control" th:field="*{NUsuario}" id="usuario" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('NUsuario')}" 
 							th:errors="*{NUsuario}">						
@@ -77,7 +77,7 @@
 						
 						<div class="form-group">
 						<label for="contraseña">CONTRASEÑA:</label>
-						<input type="text" class="form-control" th:field="*{TContraseña}" id="contraseña"></input>
+						<input type="text" class="form-control" th:field="*{TContraseña}" id="contraseña" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('TContraseña')}" 
 							th:errors="*{TContraseña}">						

@@ -33,7 +33,7 @@
 					<br>
 					<div class="form-group">
 						<label for="nombre">ESPECIALIDAD:</label>
-						<input type="text" class="form-control" th:field="*{NEspecialidad}" id="nombre"></input>
+						<input type="text" class="form-control" th:field="*{NEspecialidad}" id="nombre" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('NEspecialidad')}" 
 							th:errors="*{NEspecialidad}">						
@@ -41,7 +41,7 @@
 						
 							<div class="form-group">
 						<label for="nombre">DESCRIPCION:</label>
-						<input type="text" class="form-control" th:field="*{TDescripcion}" id="descripcion" maxlength="50"></input>				
+						<input type="text" class="form-control" th:field="*{TDescripcion}" id="descripcion" maxlength="50" required></input>				
 						
 					</div>
 				

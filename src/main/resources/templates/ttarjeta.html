@@ -30,12 +30,12 @@
 				<div class="form-group">
 					
 					<label for="CTTarjeta">CODIGO:</label> 
-					<input type="text" class="form-control" th:field="*{CTTarjeta}"></input>
+					<input type="text" class="form-control" th:field="*{CTTarjeta}" ></input>
 					
 					<div class="form-group">
 					
 						<label 	for="nombre">TIPO DE TARJETA:</label> 
-						<input type="text" th:field="*{NTTarjeta}" class="form-control" id="nombre"></input>
+						<input type="text" th:field="*{NTTarjeta}" class="form-control" id="nombre" required></input>
 	
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('NTTarjeta')}" 
 							th:errors="*{NTTarjeta}">

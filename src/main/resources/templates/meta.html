@@ -33,7 +33,7 @@
 					<br>
 					<div class="form-group">
 						<label for="nombre">META FINANCIERA:</label>
-						<input type="text" class="form-control" th:field="*{NMeta}" id="nombre"></input>
+						<input type="text" class="form-control" th:field="*{NMeta}" id="nombre" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('NMeta')}" 
 							th:errors="*{NMeta}">						
@@ -41,21 +41,21 @@
 						
 						<div class="form-group">
 						<label for="descripcion">DESCRIPCIÓN DE META FINANCIERA:</label>
-						<input type="text" class="form-control" th:field="*{TDescripcion}" id="descripcion" maxlength="50"></input>
+						<input type="text" class="form-control" th:field="*{TDescripcion}" id="descripcion" maxlength="50" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('TDescripcion')}" 
 							th:errors="*{TDescripcion}">						
 						</div>
 						
 						<label for="fechadeInicio">FECHA DE INICIO:</label>
-						<input type="date" class="form-control" th:field="*{FechaInicio}" id="fechadeInicio"></input>
+						<input type="date" class="form-control" th:field="*{FechaInicio}" id="fechadeInicio" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('FechaInicio')}" 
 							th:errors="*{FechaInicio}">						
 						</div>
 						
 						<label for="fechadeFin">FECHA DE FIN:</label>
-						<input type="date" class="form-control" th:field="*{FechaFin}" id="fechadeFin"></input>
+						<input type="date" class="form-control" th:field="*{FechaFin}" id="fechadeFin" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('FechaFin')}" 
 							th:errors="*{FechaFin}">						

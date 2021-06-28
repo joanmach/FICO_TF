@@ -35,7 +35,7 @@
 					<div class="form-group">
 					
 						<label 	for="nombre">ENTIDAD BANCARIA:</label> 
-						<input type="text" th:field="*{NEntidad}" class="form-control" id="nombre"></input>
+						<input type="text" th:field="*{NEntidad}" class="form-control" id="nombre" required></input>
 	
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('NEntidad')}" 
 							th:errors="*{NEntidad}">

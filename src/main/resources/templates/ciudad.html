@@ -33,7 +33,7 @@
 					<br>
 					<div class="form-group">
 						<label for="nombre">CIUDAD:</label>
-						<input type="text" class="form-control" th:field="*{NCiudad}" id="nombre"></input>
+						<input type="text" class="form-control" th:field="*{NCiudad}" id="nombre" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('NCiudad')}" 
 							th:errors="*{NCiudad}">						

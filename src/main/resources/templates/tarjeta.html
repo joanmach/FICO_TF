@@ -29,11 +29,11 @@
 			<form th:action="@{/tarjeta/registrar}" method="post" th:object="${tarjeta}">
 				<div class="form-group">
 					<label for="ctarjeta">ID:</label>
-					<input type="text" class="form-control" th:field="*{CTarjeta}"></input>
+					<input type="text" class="form-control" th:field="*{CTarjeta}" ></input>
 					<br>
 					<div class="form-group">
 						<label for="numTarjeta">NUMERO DE TARJETA:</label>
-						<input type="text" class="form-control" th:field="*{numTarjeta}" id="numtarjeta" maxlength="16"></input>
+						<input type="text" class="form-control" th:field="*{numTarjeta}" id="numtarjeta" maxlength="16" required></input>
 					<div class="alert alert-danger" th:if="${#fields.hasErrors('numTarjeta')}" 
 							th:errors="*{numTarjeta}">						
 						</div>

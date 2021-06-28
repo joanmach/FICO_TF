@@ -33,19 +33,19 @@
 					<br>
 					<div class="form-group">
 						<label for="nombre">ASESORIA:</label>
-						<input type="text" class="form-control" th:field="*{NAsesoria}" id="nombre"  maxlength="30"></input>
+						<input type="text" class="form-control" th:field="*{NAsesoria}" id="nombre"  maxlength="30" required></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('NAsesoria')}" 
 							th:errors="*{NAsesoria}">						
 						</div>
 					<div class="form-group">
 						<label for="descripcion">DESCRIPCION:</label>
-						<input type="text" class="form-control" th:field="*{TDescripcion}" id="descripcion" maxlength="50"></input>
+						<input type="text" class="form-control" th:field="*{TDescripcion}" id="descripcion" maxlength="50" required></input>
 						</div>
 						
 					<div class="form-group">
 						<label for="precio">PRECIO:</label>
-						<input type="text" class="form-control" th:field="*{MPrecio}" id="precio"></input>
+						<input type="text" class="form-control" th:field="*{MPrecio}" id="precio" required></input>
 						</div>
 					
 						<label for="asesor" class="col-sm-2 col-form-label">ASESOR:</label>
