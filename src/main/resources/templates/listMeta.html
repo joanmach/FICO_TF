@@ -26,20 +26,21 @@
 		<div th:replace="fragments/headerC :: header"></div>
 		
 		<div class="container">
-			<form id="myform">
+			<div id="myform">
 				<div class="row clearfix">
 					<div class="col-md-12 column">
+					
+					 
+					
+					
+					
 						<a 	style="border-bottom-color: black" th:href="@{/meta/irRegistrar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
 							<span class="glyphicon glyphicon-plus"></span> Meta
 						</a>
 						
-						<a 	style="border-bottom-color: black" th:href="@{/meta/irBuscar}" id="add-row"
-						   	type = "button"
-						   	class= "btn btn-primary btn-md left-block">
-							<span class="glyphicon glyphicon-search"></span> Buscar
-						</a>
+					
 						
 						
 						
@@ -77,7 +78,7 @@
 				<div th:if="${mensaje}" class="alert alert-danger">
 					<p th:text="${mensaje}"></p>
 				</div>
-			</form>
+			</div>
 		</div>
 		
 		<div th:replace="fragments/footer :: footer"></div>

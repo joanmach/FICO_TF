@@ -27,35 +27,11 @@
 		<div th:replace="fragments/headerC :: header"></div>
 		
 		<div class="container">
-			<form id="myform">
+			<div id="myform">
 				<div class="row clearfix">
 					<div class="col-md-12 column">
 					
-				        <form th:action="@{/asesoria/find}" method="post"
-						th:object="${asesoria}">
-
-						<div class="form-group">
-							<table>
-								<tbody>
-									<tr>
-										<td><label for="nombreAsesoria"
-											class="col-sm-2 col-form-label">Asesoria:</label></td>
-										<td><input type="text" class="form-control"
-											th:field="*{NAsesoria}" id="nombreAsesoria"
-											placeholder="Nombre Asesoria" required="required"></input></td>
-										<td>
-										<button type="submit" class="btn btn-danger">Buscar
-												<i class="iconf fa fa-search" style="color: white;"></i>
-										</button>
-											</td>
-											
-										<td><a href="/asesoria/listar" class="btn btn-danger">Limpiar</a></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</form>
-
+				  
 					
 						
 						<table class="table table-bordered table-hover table-striped" id="tab_logic"style="background-color: white;">
@@ -88,7 +64,7 @@
 				<div th:if="${mensaje}" class="alert alert-danger">
 					<p th:text="${mensaje}"></p>
 				</div>
-			</form>
+			</div>
 		</div>
 		
 		<div th:replace="fragments/footer :: footer"></div>
