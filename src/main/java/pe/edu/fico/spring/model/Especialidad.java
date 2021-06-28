@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
 
 
 @Entity
@@ -17,11 +16,10 @@ public class Especialidad {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int CEspecialidad;
 	
-	@NotEmpty(message="Debe ingresar el nombre de la especialidad")
+	
 	@Column(name="NEspecialidad", nullable=false, length=30)
 	private String NEspecialidad;
 	
-	@NotEmpty(message="Debe ingresar la descripcion de la especialidad")
 	@Column(name="TDescripcion", nullable=false, length=50)
 	private String TDescripcion;
 

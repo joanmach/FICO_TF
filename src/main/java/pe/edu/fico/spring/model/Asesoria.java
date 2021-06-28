@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="asesoria")
@@ -18,15 +17,13 @@ public class Asesoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int CAsesoria;
 		
-	@NotEmpty(message = "Debe ingresar el nombre de la asesoria*")
+	
 	@Column(name="NAsesoria", nullable=false, length=30)
 	private String NAsesoria;
 	
-	@NotEmpty(message = "Debe ingresar la descripcion de la asesoria*")
 	@Column(name="TDescripcion", nullable=false, length=50)
 	private String TDescripcion;
 	
-	@NotEmpty(message = "Debe ingresar el  pecio de la asesoria*")
 	@Column(name="MPrecio", nullable=false, length=10)
 	private int MPrecio;
 	

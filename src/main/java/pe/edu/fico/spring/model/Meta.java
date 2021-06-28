@@ -12,8 +12,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -26,20 +24,18 @@ public class Meta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int CMeta;
 	
-	@NotEmpty(message="Debe ingresar el nombre de la meta")
+	
 	@Column(name="NMeta", nullable=false, length=30)
 	private String NMeta;
 	
-	@NotEmpty(message="Debe ingresar la descripcion de la meta")
 	@Column(name="TDescripcion", nullable=false, length=50)
 	private String TDescripcion;
 	
-	@NotNull
 	@Temporal(TemporalType.DATE)
 	@Column(name="FechaInicio", nullable=false,length = 50)
 	@DateTimeFormat(pattern="yyy-MM-dd")
 	private Date FechaInicio;
-	@NotNull
+	
 	@Temporal(TemporalType.DATE)
 	@Column(name="FechaFin", nullable=false,length = 50)
 	@DateTimeFormat(pattern="yyy-MM-dd")

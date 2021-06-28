@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "tarjetacredito")
@@ -19,7 +18,6 @@ public class TarjetaCred {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int CTarjeta;
 	
-	@NotEmpty(message="Debe ingresar el numero de la tarjeta")
 	@Column(name = "NumTarjeta", nullable = false, length = 16)
 	private String numTarjeta;
 	

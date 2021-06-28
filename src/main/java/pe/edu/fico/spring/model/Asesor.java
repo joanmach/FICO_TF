@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-
 
 
 
@@ -26,27 +24,22 @@ public class Asesor implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int CAsesor;
 	
-	@NotEmpty(message = "Debe ingresar su nombre*")
+	
 	@Column(name="Nnombre", nullable=false, length=30)
 	private String Nnombre;
 	
-	@NotEmpty(message = "Debe ingresar su apellido*")
 	@Column(name="Napellido", nullable=false, length=30)
 	private String Napellido;
 	
-	@NotEmpty(message = "Debe ingresar su DNI*")
 	@Column(name="Ndni", nullable=false, length=8)
 	private int Ndni;
 	
-	@NotEmpty(message = "Debe ingresar su correo*")
 	@Column(name="Tcorreo", nullable=false, length=30)
 	private String Tcorreo;
 	
-	@NotEmpty(message = "Debe ingresar su usuario*")
 	@Column(name="Nusuario", nullable=false, length=30)
 	private String Nusuario;
 	
-	@NotEmpty(message = "Debe ingresar su contraseña*")
 	@Column(name="Tcontraseña", nullable=false, length=30)
 	private String Tcontraseña;
 	
