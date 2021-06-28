@@ -26,10 +26,9 @@
 		<div th:replace="fragments/headerA :: header"></div>
 		
 		<div class="container">
-			<form id="myform">
+			<div id="myform">
 				<div class="row clearfix">
 					<div class="col-md-12 column">
-					
 				        <form th:action="@{/asesoria/find}" method="post"
 						th:object="${asesoria}">
 
@@ -54,7 +53,7 @@
 							</table>
 						</div>
 					</form>
-
+			
 						<a 	style="border-bottom-color: black" th:href="@{/asesoria/irRegistrar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
@@ -73,7 +72,7 @@
 									<th class="text-center">OPERACION</th>
 								</tr>
 							</thead>
-							
+				
 							<tbody>
 								<tr th:each="ases: ${listaAsesorias}">
 									<td th:text="${ases.CAsesoria}"></td>
@@ -85,14 +84,22 @@
 									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/asesoria/modificar/' + ${ases.CAsesoria}}"> Modificar</a></td>
 								</tr>
 							</tbody>
+				
 						</table>
-					</div>
-				</div>
+						</div>
+						</div>
+				
 				<div th:if="${mensaje}" class="alert alert-danger">
 					<p th:text="${mensaje}"></p>
-				</div>
-			</form>
-		</div>
+					
+			   </div>
+			   </div>
+			   </div>
+			   
+			   
+		
+		
+			
 		
 		<div th:replace="fragments/footer :: footer"></div>
 	</body>
