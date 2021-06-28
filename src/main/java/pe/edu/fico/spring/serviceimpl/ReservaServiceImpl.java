@@ -20,11 +20,16 @@ public class ReservaServiceImpl implements IReservaService{
 	@Override
 	@Transactional
 	public boolean insertar(Reserva re) {
+		if(dRe.duplicidadCHorario(re.getHorario().getCHorario())==0) {
 		Reserva objRe = dRe.save(re);
 		if(objRe == null)
 			return false;
 		else
 			return true;
+		}
+		else
+			System.out.println("Invalid Value");
+		return false;
 	}
 
 	@Override
