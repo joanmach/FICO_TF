@@ -52,7 +52,7 @@
 						<label for="horario" class="col-sm-2 col-form-label">INICIO DE ASESORIA:</label>
 						<select class ="form-control" th:field="*{horario.CHorario}">
 						<option th:each ="ho:${listaHorarios}" th:value= "${ho.CHorario}"
-						        th:text="${ho.FechaInicio + '   ' + +'     '+ ho.FechaFin +'     '+ +'     '+ ho.HoraInicio +'    '+ +'     '+ ho.HoraFin}" 
+						        th:text="${ho.FechaInicio + '   ' +  ho.FechaFin +'     '+  ho.HoraInicio +'    '+  ho.HoraFin}" 
 						        th:selected= "(${ho.CHorario}== *{horario.CHorario})">
 						</option>
 						</select>
