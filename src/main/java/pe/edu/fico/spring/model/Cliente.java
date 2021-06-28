@@ -13,8 +13,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.sun.istack.NotNull;
 
 
 @Entity
@@ -27,26 +30,33 @@ public class Cliente implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int CCliente;
 	
+	@NotEmpty(message = "Debe ingresar el numero de DNI*")
 	@Column(name="NDNI", nullable=false, length=8)
 	private int NDNI;
-		
+	
+	@NotEmpty(message = "Debe ingresar su nombre*")
 	@Column(name="NNombre", nullable=false, length=30)
 	private String NNombre;
 	
+	@NotEmpty(message = "Debe ingresar su apellido*")
 	@Column(name="NApellido", nullable=false, length=30)
 	private String NApellido;
 	
+	@NotEmpty(message = "Debe ingresar su correo*")
 	@Column(name="TCorreo", nullable=false, length=30)
 	private String TCorreo;
 	
+
 	@Temporal(TemporalType.DATE)
 	@Column(name="FNacimiento", nullable=false, length=50)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date FNacimiento;
 	
+	@NotEmpty(message = "Debe ingresar su usuario*")
 	@Column(name="NUsuaruio", nullable=false, length=30)
 	private String NUsuario;
 	
+	@NotEmpty(message = "Debe ingresar su contraseña*")
 	@Column(name="TContraseña", nullable=false, length=30)
 	private String TContraseña;
 	

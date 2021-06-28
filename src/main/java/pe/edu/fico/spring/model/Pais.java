@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
@@ -20,7 +22,8 @@ public class Pais implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int CPais;
 	
-	
+	@NotNull
+	@NotEmpty(message="Debe ingresar el nombre del pais")
 	@Column(name="NPais", nullable=false, length=15)
 	private String NPais;
 

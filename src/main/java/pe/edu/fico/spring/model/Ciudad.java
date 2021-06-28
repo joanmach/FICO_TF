@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="ciudad")
@@ -21,8 +22,8 @@ public class Ciudad implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int CCiudad;
 	
-	
-	@Column(name="NPais", nullable=false, length=15)
+	@NotEmpty(message = "Debe ingresar el nombre de la ciudad*")
+	@Column(name="NCiudad", nullable=false, length=15)
 	private String NCiudad;
 	
 	@ManyToOne
